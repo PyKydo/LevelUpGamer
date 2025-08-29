@@ -2,6 +2,69 @@
   --primary-color: #ffffff;
   --secondary-color: #d3d3d3;
   --background-color: #000000;
+  --header-color: #1c1c1c;
   --border-color: #444444;
   --font-stack: "Roboto", sans-serif;
+  --btn-color: #39ff14;
+  --accent-color: #1e90ff;
+  --gradiant-1: #39ff14;
+  --gradiant-2: #1119AE;
+  --logotype-border-color: #7100D4;
 }
+
+body{
+  background-color: var(--background-color);
+}
+
+header{
+  background-color: var(--header-color);
+}
+
+.logo{
+  margin-right: 30px;
+  width: 70px;
+}
+
+.signup-btn{
+  border-radius: 20px;
+  padding: 4px 18px;
+  border-color: #39ff14;
+}
+
+.login-btn{
+  border-radius: 20px;
+  border: 0px;
+  padding: 4px 18px;
+  background-color: #39ff14;
+}
+
+.navbar-items a{
+  font-family: var(--font-stack);
+  
+}
+
+
+.pixelify-sans-bold {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  
+}
+
+.logotype{
+  margin-right: 30px;
+  background-image: linear-gradient(var(--gradiant-1), var(--gradiant-2));
+  background-clip: text;
+  color: transparent;
+  font-size: 32px;
+  /*filter : drop-shadow(2px 0 0 var(--logotype-border-color))
+  drop-shadow(0 2px 0 var(--logotype-border-color))
+  drop-shadow(-2px 0 0 var(--logotype-border-color))
+  drop-shadow(0 -2px 0 var(--logotype-border-color))*/
+}
+
+
+
+
+
