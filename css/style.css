@@ -64,6 +64,21 @@ header{
   drop-shadow(0 -2px 0 var(--logotype-border-color))*/
 }
 
+.search-bar{
+  width: 500px;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+.search-bar::placeholder .search-bar::after{
+  color: var(--primary-color);
+  padding-left: 10px;
+
+}
+
+
+
 
 
 
