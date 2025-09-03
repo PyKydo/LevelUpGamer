@@ -1,3 +1,6 @@
+/* ===================== IMPORTS ===================== */
+
+/* ===================== VARIABLES ===================== */
 :root {
   --primary-color: #ffffff;
   --secondary-color: #d3d3d3;
@@ -7,79 +10,104 @@
   --font-stack: "Roboto", sans-serif;
   --btn-color: #39ff14;
   --accent-color: #1e90ff;
-  --gradiant-1: #39ff14;
-  --gradiant-2: #1119AE;
-  --logotype-border-color: #7100D4;
 }
 
-body{
-  background-color: var(--background-color);
+/* ===================== SEARCH GROUP ===================== */
+.search-group {
+  min-width: 180px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-header{
+/* ===================== LOGOTIPO ===================== */
+.logotype {
+  height: 30px;
+  width: auto;
+  margin-left: 8px;
+}
+
+@media (max-width: 575.98px) {
+  .logotype {
+    height: 24px;
+  }
+}
+
+/* ===================== HEADER & NAVBAR ===================== */
+header {
   background-color: var(--header-color);
 }
+nav.navbar {
+  padding: 18px 24px !important;
+}
+@media (max-width: 991.98px) {
+  nav.navbar {
+    padding: 18px 12px !important;
+  }
+  .navbar-collapse {
+    padding: 24px 0;
+  }
+  .navbar-nav > .nav-item {
+    margin-bottom: 12px;
+  }
+  .navbar-nav > .nav-item:last-child {
+    margin-bottom: 0;
+  }
+}
 
-.logo{
+/* ===================== LOGO ===================== */
+.logo {
   margin-right: 30px;
-  width: 70px;
+  width: 72px;
 }
 
-.signup-btn{
-  border-radius: 20px;
-  padding: 4px 18px;
-  border-color: #39ff14;
+/* ===================== BOTÓN UNIFICADO ===================== */
+.btn-accent {
+  background-color: var(--btn-color);
+  color: #000000;
+  font-weight: 500;
+}
+.btn-accent:hover {
+  background-color: #1767b8;
+  color: #fff;
+}
+.login-signup-btn {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.login-signup-btn .bi {
+  font-size: 1.2rem;
 }
 
-.login-btn{
-  border-radius: 20px;
-  border: 0px;
-  padding: 4px 18px;
-  background-color: #39ff14;
-}
-
-.navbar-items a{
+/* ===================== NAVBAR ITEMS ===================== */
+.navbar-items a {
   font-family: var(--font-stack);
-  
 }
 
-
-.pixelify-sans-bold {
-  font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: bold;
-  font-style: normal;
-  
-}
-
-.logotype{
-  margin-right: 30px;
-  background-image: linear-gradient(var(--gradiant-1), var(--gradiant-2));
-  background-clip: text;
-  color: transparent;
-  font-size: 32px;
-  /*filter : drop-shadow(2px 0 0 var(--logotype-border-color))
-  drop-shadow(0 2px 0 var(--logotype-border-color))
-  drop-shadow(-2px 0 0 var(--logotype-border-color))
-  drop-shadow(0 -2px 0 var(--logotype-border-color))*/
-}
-
-.search-bar{
-  width: 500px;
+/* ===================== SEARCH BAR ===================== */
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  min-width: 180px;
   background-color: var(--background-color);
   border-radius: 20px;
-  padding-left: 10px;
-}
-
-.search-bar::placeholder .search-bar::after{
+  padding-left: 20px;
+  box-sizing: border-box;
   color: var(--primary-color);
-  padding-left: 10px;
-
+}
+.search-bar::placeholder {
+  padding-left: 0px;
+  color: #6c757d;
+  opacity: 1;
 }
 
-
-
-
-
-
-
+/* ===================== BODY ===================== */
+body {
+  background-color: var(--background-color);
+}
