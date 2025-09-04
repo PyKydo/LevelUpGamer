@@ -151,5 +151,24 @@ margin-bottom: 1rem;
 border: 3px solid #dee2e6;
 }
 
+.team-member img {
+  width: 150px; /* Establece un ancho fijo para todas las imágenes */
+  height: 150px; /* Establece una altura fija para mantener la proporción */
+  object-fit: cover; /* Asegura que la imagen se recorte para ajustarse al contenedor */
+  border-radius: 50%;
+}
+.team-member h4 {
+  margin-top: 15px;
+}
+
+.btn-lg{
+  background-color: var(--btn-color);
+  color: #000000;
+  font-weight: 500;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 15px;
+}
+
 
 
