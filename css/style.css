@@ -10,6 +10,7 @@
   --font-stack: "Roboto", sans-serif;
   --btn-color: #39ff14;
   --accent-color: #1e90ff;
+  --hover-color: #20cb01;
 }
 
 /* ===================== SEARCH GROUP ===================== */
@@ -170,5 +171,57 @@ border: 3px solid #dee2e6;
   padding: 10px 15px;
 }
 
+.btn-primary {
+  background-color: var(--btn-color); /* Color inicial */
+  color: #000000;
+  border: none;
+}
 
+.btn-primary:hover {
+  background-color: var(--hover-color); /* Azul más claro */
+  color: var(--background-color);
+}
 
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--hover-color) !important; /* Mantiene el mismo color que en hover */
+  color: var(--background-color) !important;
+  box-shadow: none; /* Elimina cualquier sombra que pueda dar la impresión de un cambio */
+  outline: none; /* Elimina el contorno al hacer clic o enfocar */
+}
+
+.form-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.form-signin img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.form-signin h1 {
+  font-size: 2rem; /* Aumenta el tamaño del título */
+  margin-bottom: 1.5rem;
+}
+
+.form-signin .form-floating {
+  width: 100%; /* Asegura que los campos ocupen todo el ancho */
+  max-width: 800px; /* Establece un ancho máximo */
+  margin-bottom: 1rem;
+}
+
+.form-signin .form-control {
+  font-size: 1.7rem; /* Aumenta el tamaño del texto en los campos */
+  padding: 1rem; /* Aumenta el relleno interno */
+}
+
+.form-signin button {
+  font-size: 1rem; /* Aumenta el tamaño del texto del botón */
+  padding: 0.75rem 1rem; /* Ajusta el relleno del botón */
+}
