@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | LevelUpGamer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <main class="container py-5">
+      <h1 class="mb-4 text-center">Blogs</h1>
+      <div class="row g-4">
+        <!-- Ejemplo de entrada de blog -->
+        <div class="col-md-6 col-lg-4 blog-col">
+          <div class="card h-100">
+            <img
+              src="/img/blog/mejores-juegos-2025-4309642.webp"
+              class="card-img-top"
+              alt="Post 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Los mejores juegos de 2025</h5>
+              <p class="card-text">
+                Descubre nuestra selección de los títulos más destacados del año
+                y por qué deberías jugarlos.
+              </p>
+              <div class="extra-text">
+                Este año ha traído lanzamientos impresionantes en todas las
+                plataformas. Desde aventuras épicas hasta shooters competitivos,
+                te contamos cuáles son los juegos que no puedes perderte y qué
+                los hace tan especiales para la comunidad gamer.
+              </div>
+              <button class="btn btn-primary btn-leer-mas" type="button">
+                Leer más
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Otra entrada de blog -->
+        <div class="col-md-6 col-lg-4 blog-col">
+          <div class="card h-100">
+            <img
+              src="/img/blog/Call-of-Duty-e-sports-304.jpg"
+              class="card-img-top"
+              alt="Post 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Tips para mejorar en shooters</h5>
+              <p class="card-text">
+                Consejos prácticos para subir de nivel y dominar los juegos de
+                disparos en línea.
+              </p>
+              <div class="extra-text">
+                Practica tu puntería a diario, aprende a moverte
+                estratégicamente y estudia los mapas. Además, la comunicación
+                con tu equipo y la gestión de recursos pueden marcar la
+                diferencia en cada partida.
+              </div>
+              <button class="btn btn-primary btn-leer-mas" type="button">
+                Leer más
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Otra entrada de blog -->
+        <div class="col-md-6 col-lg-4 blog-col">
+          <div class="card h-100">
+            <img
+              src="/img/blog/ASUS-ROG-CES25.jpg"
+              class="card-img-top"
+              alt="Post 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Mejores productos este 2025</h5>
+              <p class="card-text">
+                Descubre los gadgets y accesorios más innovadores para gamers
+                que llegan este año.
+              </p>
+              <div class="extra-text">
+                Desde teclados mecánicos de última generación hasta monitores
+                con tasas de refresco impresionantes, 2025 trae una ola de
+                productos que mejorarán tu experiencia de juego. Analizamos los
+                lanzamientos más esperados y te contamos cuáles valen la pena.
+              </div>
+              <button class="btn btn-primary btn-leer-mas" type="button">
+                Leer más
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Mostrar más texto y agrandar la imagen al presionar "Leer más"
+      document.querySelectorAll(".btn-leer-mas").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const cardBody = btn.closest(".card-body");
+          const card = btn.closest(".card");
+          cardBody.classList.toggle("expanded");
+          card.classList.toggle("expanded");
+          if (cardBody.classList.contains("expanded")) {
+            btn.textContent = "Leer menos";
+          } else {
+            btn.textContent = "Leer más";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

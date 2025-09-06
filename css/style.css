@@ -114,17 +114,20 @@ body {
   color: #ffffff;
 }
 
-.about_us{
-font-family: var(--font-stack);
-
+/* ===================== ABOUT US ===================== */
+.about_us {
+  font-family: var(--font-stack);
 }
 
+/* ===================== JUMBOTRON ===================== */
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
+
+/* ===================== TEAM MEMBER ===================== */
 .team-member {
   text-align: center;
 }
@@ -137,19 +140,18 @@ font-family: var(--font-stack);
   border: 3px solid #ffffff;
 }
 
-.py-5{
+.py-5 {
   color: var(--primary-color);
   background-color: black;
 }
 
-
 .team-member img {
-width: 150px;
-height: 150px;
-object-fit: cover;
-border-radius: 50%;
-margin-bottom: 1rem;
-border: 3px solid #dee2e6;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #dee2e6;
 }
 
 .team-member img {
@@ -162,7 +164,8 @@ border: 3px solid #dee2e6;
   margin-top: 15px;
 }
 
-.btn-lg{
+/* ===================== BOTÓN GRANDE ===================== */
+.btn-lg {
   background-color: var(--btn-color);
   color: #000000;
   font-weight: 500;
@@ -171,6 +174,7 @@ border: 3px solid #dee2e6;
   padding: 10px 15px;
 }
 
+/* ===================== BOTÓN PRIMARIO ===================== */
 .btn-primary {
   background-color: var(--btn-color); /* Color inicial */
   color: #000000;
@@ -184,18 +188,20 @@ border: 3px solid #dee2e6;
 
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: var(--hover-color) !important; /* Mantiene el mismo color que en hover */
+  background-color: var(
+    --hover-color
+  ) !important; /* Mantiene el mismo color que en hover */
   color: var(--background-color) !important;
   box-shadow: none; /* Elimina cualquier sombra que pueda dar la impresión de un cambio */
   outline: none; /* Elimina el contorno al hacer clic o enfocar */
 }
 
+/* ===================== FORMULARIO DE INICIO DE SESIÓN ===================== */
 .form-signin {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
 }
 
 .form-signin img {
@@ -217,7 +223,7 @@ border: 3px solid #dee2e6;
 }
 
 .form-signin .form-control {
-  font-size: 1.7rem; /* Aumenta el tamaño del texto en los campos */
+  font-size: 1rem; /* Aumenta el tamaño del texto en los campos */
   padding: 1rem; /* Aumenta el relleno interno */
 }
 
@@ -225,3 +231,52 @@ border: 3px solid #dee2e6;
   font-size: 1rem; /* Aumenta el tamaño del texto del botón */
   padding: 0.75rem 1rem; /* Ajusta el relleno del botón */
 }
+
+.card-img-top {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  background: #222;
+}
+
+/*====================== Blog =====================*/
+
+.blog-col {
+  position: relative;
+}
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  background: #222;
+  transition: height 0.4s;
+}
+.card-body .extra-text {
+  display: none;
+  margin-top: 1rem;
+  color: #444;
+}
+.card-body.expanded {
+  margin-bottom: 2rem;
+  transition: margin-bottom 0.3s;
+}
+.card-body.expanded .extra-text {
+  display: block;
+  animation: fadeIn 0.4s;
+}
+.card.expanded .card-img-top {
+  height: 320px;
+  transition: height 0.4s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===================== FIN ===================== */
