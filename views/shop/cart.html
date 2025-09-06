@@ -4,14 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito - Level-Up Gamer</title>
-    <link
-      rel="stylesheet"
-      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css" />
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="icon" type="image/png" href="../../img/isotype.png" />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow-1">
+      <!-- Aquí va el contenido específico del carrito -->
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
     <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../js/components.js"></script>
+    <script src="../../js/main.js"></script>
   </body>
 </html>
