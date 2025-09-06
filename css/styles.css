@@ -1,0 +1,405 @@
+/* ===================== IMPORTS ===================== */
+
+/* ===================== VARIABLES ===================== */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #d3d3d3;
+  --background-color: #000000;
+  --header-color: #1c1c1c;
+  --border-color: #444444;
+  --font-stack: "Roboto", sans-serif;
+  --heading-font: "Orbitron", sans-serif;
+  --btn-color: #39ff14;
+  --accent-color: #1e90ff;
+  --hover-color: #20cb01;
+  --danger-color: #ff1744;
+  --success-color: #00e676;
+  --warning-color: #ffc107;
+  --info-color: #00bcd4;
+  --disabled-color: #888888;
+  --input-bg: #222222;
+  --input-border: #666666;
+  --input-radius: 12px;
+  --card-radius: 18px;
+  --card-shadow: 0 2px 12px rgba(30, 144, 255, 0.08);
+  --navbar-height: 64px;
+  --logo-size: 72px;
+  --container-max-width: 1200px;
+  --section-padding: 48px;
+  --transition-fast: 0.2s;
+  --transition-slow: 0.4s;
+  --border-radius: 16px;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+  --breakpoint-xs: 575.98px;
+  --breakpoint-sm: 767.98px;
+  --breakpoint-md: 991.98px;
+  --breakpoint-lg: 1199.98px;
+  --breakpoint-xl: 1399.98px;
+}
+
+/* ===================== SEARCH GROUP ===================== */
+.search-group {
+  min-width: 180px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===================== LOGOTIPO ===================== */
+.logotype {
+  height: 30px;
+  width: auto;
+  margin-left: 8px;
+}
+
+@media (max-width: 575.98px) {
+  .logotype {
+    height: 24px;
+  }
+}
+
+/* ===================== HEADER & NAVBAR ===================== */
+header {
+  background-color: var(--header-color);
+}
+nav.navbar {
+  padding: 18px 24px !important;
+}
+@media (max-width: 991.98px) {
+  nav.navbar {
+    padding: 18px 12px !important;
+  }
+  .navbar-collapse {
+    padding: 24px 0;
+  }
+  .navbar-nav > .nav-item {
+    margin-bottom: 12px;
+  }
+  .navbar-nav > .nav-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ===================== LOGO ===================== */
+.logo {
+  margin-right: 30px;
+  width: 72px;
+}
+
+/* ===================== BOTÓN UNIFICADO ===================== */
+.btn-accent {
+  background-color: var(--btn-color);
+  color: #000000;
+  font-weight: 500;
+}
+.btn-accent:hover {
+  background-color: #1767b8;
+  color: #fff;
+}
+.login-signup-btn {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.login-signup-btn .bi {
+  font-size: 1.2rem;
+}
+
+/* ===================== NAVBAR ITEMS ===================== */
+.navbar-items a {
+  font-family: var(--font-stack);
+}
+
+/* ===================== SEARCH BAR ===================== */
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  min-width: 180px;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  color: var(--primary-color);
+}
+.search-bar::placeholder {
+  padding-left: 0px;
+  color: #6c757d;
+  opacity: 1;
+}
+
+/* ===================== BODY ===================== */
+body {
+  background-color: var(--background-color);
+  color: #ffffff;
+}
+
+/* ===================== ABOUT US ===================== */
+.about_us {
+  font-family: var(--font-stack);
+}
+
+/* ===================== JUMBOTRON ===================== */
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+}
+
+/* ===================== TEAM MEMBER ===================== */
+.team-member {
+  text-align: center;
+}
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #ffffff;
+}
+
+.py-5 {
+  color: var(--primary-color);
+  background-color: black;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #dee2e6;
+}
+
+.team-member img {
+  width: 150px; /* Establece un ancho fijo para todas las imágenes */
+  height: 150px; /* Establece una altura fija para mantener la proporción */
+  object-fit: cover; /* Asegura que la imagen se recorte para ajustarse al contenedor */
+  border-radius: 50%;
+}
+.team-member h4 {
+  margin-top: 15px;
+}
+
+/* ===================== BOTÓN GRANDE ===================== */
+.btn-lg {
+  background-color: var(--btn-color);
+  color: #000000;
+  font-weight: 500;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 15px;
+}
+
+/* ===================== BOTÓN PRIMARIO ===================== */
+.btn-primary {
+  background-color: var(--btn-color); /* Color inicial */
+  color: #000000;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color); /* Azul más claro */
+  color: var(--background-color);
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(
+    --hover-color
+  ) !important; /* Mantiene el mismo color que en hover */
+  color: var(--background-color) !important;
+  box-shadow: none; /* Elimina cualquier sombra que pueda dar la impresión de un cambio */
+  outline: none; /* Elimina el contorno al hacer clic o enfocar */
+}
+
+/* ===================== FORMULARIO DE INICIO DE SESIÓN ===================== */
+.form-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-signin img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.form-signin h1 {
+  font-size: 2rem; /* Aumenta el tamaño del título */
+  margin-bottom: 1.5rem;
+}
+
+.form-signin .form-floating {
+  width: 100%; /* Asegura que los campos ocupen todo el ancho */
+  max-width: 800px; /* Establece un ancho máximo */
+  margin-bottom: 1rem;
+}
+
+.form-signin .form-control {
+  font-size: 1rem; /* Aumenta el tamaño del texto en los campos */
+  padding: 1rem; /* Aumenta el relleno interno */
+}
+
+.form-signin button {
+  font-size: 1rem; /* Aumenta el tamaño del texto del botón */
+  padding: 0.75rem 1rem; /* Ajusta el relleno del botón */
+}
+
+.card-img-top {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  background: #222;
+}
+
+/*====================== Blog =====================*/
+
+.blog-col {
+  position: relative;
+}
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  background: #222;
+  transition: height 0.4s;
+}
+.card-body .extra-text {
+  display: none;
+  margin-top: 1rem;
+  color: #444;
+}
+.card-body.expanded {
+  margin-bottom: 2rem;
+  transition: margin-bottom 0.3s;
+}
+.card-body.expanded .extra-text {
+  display: block;
+  animation: fadeIn 0.4s;
+}
+.card.expanded .card-img-top {
+  height: 320px;
+  transition: height 0.4s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===================== ESTILOS GLOBALES Y BOOTSTRAP OVERRIDES ===================== */
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: var(--font-stack);
+  font-size: var(--font-size-base);
+}
+
+header,
+nav.navbar {
+  background-color: var(--header-color) !important;
+  min-height: var(--navbar-height);
+  box-shadow: var(--card-shadow);
+}
+
+.logo {
+  width: var(--logo-size);
+}
+
+.btn,
+.btn-primary,
+.btn-accent,
+.btn-lg {
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--btn-color);
+  color: #000;
+  border: none;
+}
+.btn-primary:hover,
+.btn-accent:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: var(--primary-color);
+}
+.btn-success {
+  background-color: var(--success-color);
+  color: var(--background-color);
+}
+.btn-warning {
+  background-color: var(--warning-color);
+  color: var(--background-color);
+}
+.btn-info {
+  background-color: var(--info-color);
+  color: var(--background-color);
+}
+.btn:disabled,
+.btn.disabled {
+  background-color: var(--disabled-color);
+  color: var(--secondary-color);
+}
+
+input,
+.form-control,
+.search-bar {
+  background-color: var(--input-bg);
+  border-radius: var(--input-radius);
+  border: 1px solid var(--input-border);
+  color: var(--primary-color);
+}
+
+.card,
+.jumbotron {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  background-color: var(--input-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+}
+
+.team-member img {
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  nav.navbar {
+    padding: 18px 12px !important;
+  }
+}
+
+/* ===================== FIN ===================== */
