@@ -402,4 +402,75 @@ h6 {
   }
 }
 
+/*=================== PRODUCTOS =================== */
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+@media (max-width: 1200px) {
+  .productos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .productos {
+    grid-template-columns: 1fr;
+  }
+}
+
+.producto {
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  overflow: hidden; /* evita que el zoom se salga del contenedor */
+}
+
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.4s ease; /* animación suave */
+}
+
+/* Efecto hover */
+.producto:hover img {
+  transform: scale(1.1);
+}
+
+.precio {
+  font-weight: bold;
+  color: #ffc107;
+}
+
+button {
+  background-color: #39ff14;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #20cb01;
+}
 /* ===================== FIN ===================== */
