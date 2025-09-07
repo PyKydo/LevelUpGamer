@@ -1,8 +1,44 @@
-# Evaluación Parcial 1 - Proyecto Tienda Online Level-Up Gamer
+# Level-Up Gamer 🎮
+
+## Configuración del Proyecto
+
+### Prerrequisitos
+
+- Node.js (versión 14 o superior)
+- npm (viene con Node.js)
+
+### Instalación
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/PyKydo/LevelUpGamer.git
+cd LevelUpGamer
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+3. Abre el archivo index.html en tu navegador favorito
+
+### Estructura de Archivos
+
+```
+LevelUpGamer/
+├── components/         # Componentes reutilizables (header, footer, cards)
+├── css/               # Estilos
+├── data/             # Archivos JSON con datos
+├── img/              # Imágenes
+├── js/               # Scripts
+└── views/            # Páginas del sitio
+```
 
 ## Contexto del Proyecto
 
-**Level-Up Gamer** es una tienda online chilena dedicada a la venta de productos para gamers. Surgió hace dos años durante la pandemia y se ha consolidado como un referente en el mercado, ofreciendo consolas, accesorios, computadores, sillas gaming y más. Aunque no tiene ubicación física, realiza despachos a todo Chile. Su misión es proporcionar productos de alta calidad con una experiencia de compra única, y su visión es ser la tienda líder en Chile, reconocida por su innovación y servicio al cliente.
+**Level-Up Gamer** es una tienda online chilena dedicada a la venta de productos para gamers. Surgió hace dos años durante la pandemia y se ha consolidado como un referente en el mercado, ofreciendo consolas, accesorios, computadores, sillas gaming y más. Aunque no tiene ubicación física, realiza despachos a todo Chile.
 
 ### Misión y Visión
 

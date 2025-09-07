@@ -40,5 +40,5 @@ img/products/.cache/
 # Ignore data backups
 *.bak
 
-# Ignore package-lock if not needed
-package-lock.json
+# Keep package-lock for consistency
+# package-lock.json

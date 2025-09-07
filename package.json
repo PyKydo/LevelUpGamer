@@ -4,7 +4,9 @@
   "description": "**Level-Up Gamer** es una tienda online chilena dedicada a la venta de productos para gamers. Surgió hace dos años durante la pandemia y se ha consolidado como un referente en el mercado, ofreciendo consolas, accesorios, computadores, sillas gaming y más. Aunque no tiene ubicación física, realiza despachos a todo Chile. Su misión es proporcionar productos de alta calidad con una experiencia de compra única, y su visión es ser la tienda líder en Chile, reconocida por su innovación y servicio al cliente.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-deps": "npm install",
+    "start": "echo \"Abre index.html en tu navegador para ver el sitio\""
   },
   "repository": {
     "type": "git",
