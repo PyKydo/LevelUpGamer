@@ -13,102 +13,22 @@
       rel="stylesheet"
       href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="../../css/styles.css" />
-    <!-- Estilos de componentes -->
-    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
     <link rel="icon" type="image/png" href="../../img/isotype.png" />
   </head>
 
   <body>
     <!-- Header Component -->
     <div id="header"></div>
-    <section class="productos">
-      <div class="producto">
-        <img
-          src="/img/products/AC001-xbox-controller.webp"
-          alt="Mando de Xbox"
-        />
-        <h3>Mando de Xbox</h3>
-        <p class="precio">$59.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-      <div class="producto">
-        <img
-          src="/img/products/AC002-hyperx-cloud.webp"
-          alt="Audifonos Gamer HyperX Cloud"
-        />
-        <h3>Audifonos Gamer HyperX Cloud</h3>
-        <p class="precio">$49.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-      <div class="producto">
-        <img
-          src="/img/products/CG001-asus-rog.webp"
-          alt="Portatil Gamer ASUS ROG"
-        />
-        <h3>Portatil Gamer ASUS ROG</h3>
-        <p class="precio">$49.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-      <div class="producto">
-        <img src="/img/products/CQ001-ps5.webp" alt="Playstation 5" />
-        <h3>Playstation 5</h3>
-        <p class="precio">$149.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-      <div class="producto">
-        <img src="/img/products/JM001-catan.webp" alt="Juego de Mesa Catan" />
-        <h3>Juego de Mesa Catan</h3>
-        <p class="precio">$199.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-      <div class="producto">
-        <img
-          src="/img/products/JM002-carcassonne.webp"
-          alt="Juego de Mesa Carcassonne"
-        />
-        <h3>Juego de Mesa Carcassonne</h3>
-        <p class="precio">$29.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-      <div class="producto">
-        <img
-          src="/img/products/MP001-razer-goliathus.webp"
-          alt="Alfombrilla XXL RGB"
-        />
-        <h3>Alfombrilla XXL RGB</h3>
-        <p class="precio">$19.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-      <div class="producto">
-        <img
-          src="/img/products/MS001-logitech-g502.webp"
-          alt="Mouse Gamer Logitech G502"
-        />
-        <h3>Mouse Gamer Logitech G502</h3>
-        <p class="precio">$1.499.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-      <div class="producto">
-        <img
-          src="/img/products/PP001-levelup-tshirt.webp"
-          alt="Polera Level-Up Gamer"
-        />
-        <h3>Polera Level-Up Gamer</h3>
-        <p class="precio">$34.990</p>
-        <button>Agregar al carrito</button>
-      </div>
 
-      <div class="producto">
-        <img
-          src="/img/products/SG001-secretlab-titan.webp"
-          alt="Silla Gamer Secretlab Titan"
-        />
-        <h3>Silla Gamer Secretlab Titan</h3>
-        <p class="precio">$44.990</p>
-        <button>Agregar al carrito</button>
-      </div>
-    </section>
+    <!-- Contenido principal -->
+    <main class="container-fluid py-4">
+      <!-- Filtros -->
+      <div id="filters-container"></div>
+
+      <!-- Contenedor de productos -->
+      <div id="products-container"></div>
+    </main>
 
     <!-- Footer Component -->
     <div id="footer"></div>
@@ -117,6 +37,6 @@
     <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../../js/components.js"></script>
-    <script src="../../js/main.js"></script>
+    <script type="module" src="../../js/core/app.js"></script>
   </body>
 </html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Formulario de Usuario</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos personalizados -->
+    <link href="../../css/main.css" rel="stylesheet" />
+    <link href="../../css/admin.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../../img/isotype.png" />
+  </head>
+  <body>
+    <div class="d-flex" id="admin-wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar-wrapper">
+        <div class="sidebar-heading text-center">
+          <img src="../../img/logo.png" alt="Level-Up Gamer" height="40" />
+          <span class="ms-2">Admin</span>
+        </div>
+        <div class="list-group list-group-flush">
+          <a href="index.html" class="list-group-item list-group-item-action">
+            <i class="bi bi-speedometer2"></i> Dashboard
+          </a>
+          <a
+            href="products.html"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="bi bi-box-seam"></i> Productos
+          </a>
+          <a
+            href="users.html"
+            class="list-group-item list-group-item-action active"
+          >
+            <i class="bi bi-people"></i> Usuarios
+          </a>
+          <a
+            href="../../index.html"
+            class="list-group-item list-group-item-action mt-auto"
+          >
+            <i class="bi bi-box-arrow-left"></i> Volver a la Tienda
+          </a>
+        </div>
+      </nav>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <main id="page-content-wrapper">
+        <header class="admin-header">
+          <h1 class="h2">Crear / Editar Usuario</h1>
+          <button class="btn btn-primary d-lg-none" id="menu-toggle">
+            <i class="bi bi-list"></i>
+          </button>
+        </header>
+
+        <div class="container-fluid">
+          <div class="card admin-card">
+            <div class="card-body">
+              <form id="user-form" novalidate>
+                <div class="row">
+                  <!-- RUN -->
+                  <div class="col-md-6 mb-3">
+                    <label for="user-run" class="form-label">RUN</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="user-run"
+                      required
+                      placeholder="12345678-9"
+                    />
+                    <div class="invalid-feedback"></div>
+                  </div>
+                  <!-- Fecha de Nacimiento -->
+                  <div class="col-md-6 mb-3">
+                    <label for="user-birthdate" class="form-label"
+                      >Fecha de Nacimiento</label
+                    >
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="user-birthdate"
+                    />
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- Nombre -->
+                  <div class="col-md-6 mb-3">
+                    <label for="user-name" class="form-label">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="user-name"
+                      required
+                      maxlength="50"
+                    />
+                    <div class="invalid-feedback"></div>
+                  </div>
+                  <!-- Apellidos -->
+                  <div class="col-md-6 mb-3">
+                    <label for="user-lastname" class="form-label"
+                      >Apellidos</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="user-lastname"
+                      required
+                      maxlength="100"
+                    />
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- Correo -->
+                  <div class="col-md-6 mb-3">
+                    <label for="user-email" class="form-label"
+                      >Correo Electrónico</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="user-email"
+                      required
+                      maxlength="100"
+                    />
+                    <div class="invalid-feedback"></div>
+                  </div>
+                  <!-- Tipo de Usuario -->
+                  <div class="col-md-6 mb-3">
+                    <label for="user-role" class="form-label"
+                      >Tipo de Usuario</label
+                    >
+                    <select class="form-select" id="user-role" required>
+                      <option selected disabled value="">
+                        Selecciona un rol...
+                      </option>
+                      <option value="cliente">Cliente</option>
+                      <option value="vendedor">Vendedor</option>
+                      <option value="administrador">Administrador</option>
+                    </select>
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+
+                <!-- Dirección -->
+                <div class="mb-3">
+                  <label for="user-address" class="form-label">Dirección</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="user-address"
+                    required
+                    maxlength="300"
+                  />
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="row">
+                  <!-- Región -->
+                  <div class="col-md-6 mb-3">
+                    <label for="user-region" class="form-label">Región</label>
+                    <select class="form-select" id="user-region" required>
+                      <option selected disabled value="">
+                        Selecciona una región...
+                      </option>
+                      <!-- Las opciones se cargarán con JS -->
+                    </select>
+                    <div class="invalid-feedback"></div>
+                  </div>
+                  <!-- Comuna -->
+                  <div class="col-md-6 mb-3">
+                    <label for="user-commune" class="form-label">Comuna</label>
+                    <select class="form-select" id="user-commune" required>
+                      <option selected disabled value="">
+                        Selecciona una comuna...
+                      </option>
+                      <!-- Las opciones se cargarán con JS -->
+                    </select>
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-end">
+                  <a href="users.html" class="btn btn-secondary me-2"
+                    >Cancelar</a
+                  >
+                  <button type="submit" class="btn btn-primary">
+                    Guardar Usuario
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#admin-wrapper -->
+
+    <!-- Scripts -->
+    <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/admin/user-validation.js"></script>
+    <script>
+      // Toggle sidebar
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("admin-wrapper").classList.toggle("toggled");
+        });
+    </script>
+  </body>
+</html>

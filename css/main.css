@@ -1,0 +1,613 @@
+/* ===================== IMPORTS ===================== */
+@import url("./components.css");
+
+/* ===================== VARIABLES CSS ===================== */
+:root {
+  /* Colores principales */
+  --primary-color: #ffffff;
+  --secondary-color: #d3d3d3;
+  --background-color: #000000;
+  --header-color: #1c1c1c;
+  --border-color: #444444;
+
+  /* Colores de marca */
+  --btn-color: #39ff14;
+  --accent-color: #1e90ff;
+  --hover-color: #20cb01;
+
+  /* Colores de estado */
+  --danger-color: #ff1744;
+  --success-color: #00e676;
+  --warning-color: #ffc107;
+  --info-color: #00bcd4;
+  --disabled-color: #888888;
+
+  /* Colores de interfaz */
+  --input-bg: #222222;
+  --input-border: #666666;
+  --card-bg: #1c1c1c;
+  --shadow-color: rgba(30, 144, 255, 0.15);
+
+  /* Tipografías */
+  --font-stack: "Roboto", sans-serif;
+  --heading-font: "Orbitron", sans-serif;
+
+  /* Tamaños y espaciado */
+  --navbar-height: 64px;
+  --logo-size: 72px;
+  --container-max-width: 1200px;
+  --section-padding: 48px;
+
+  /* Bordes y radios */
+  --input-radius: 12px;
+  --card-radius: 18px;
+  --border-radius: 16px;
+
+  /* Transiciones */
+  --transition-fast: 0.2s;
+  --transition-slow: 0.4s;
+
+  /* Tipografía */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+
+  /* Breakpoints */
+  --breakpoint-xs: 575.98px;
+  --breakpoint-sm: 767.98px;
+  --breakpoint-md: 991.98px;
+  --breakpoint-lg: 1199.98px;
+  --breakpoint-xl: 1399.98px;
+}
+
+/* ===================== RESET Y BASE ===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: var(--font-stack);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===================== TIPOGRAFÍA ===================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+/* ===================== HEADER Y NAVEGACIÓN ===================== */
+header {
+  background-color: var(--header-color);
+  box-shadow: var(--card-shadow);
+  min-height: var(--navbar-height);
+}
+
+nav.navbar {
+  padding: 18px 24px !important;
+}
+
+.logo {
+  width: var(--logo-size);
+  margin-right: 30px;
+}
+
+.logotype {
+  height: 30px;
+  width: auto;
+  margin-left: 8px;
+}
+
+/* ===================== BOTONES ===================== */
+.btn {
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--btn-color);
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.btn-accent {
+  background-color: var(--btn-color);
+  color: #000000;
+  font-weight: 500;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.btn-lg {
+  background-color: var(--btn-color);
+  color: #000000;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  padding: 10px 15px;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: var(--primary-color);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: var(--background-color);
+}
+
+.btn-warning {
+  background-color: var(--warning-color);
+  color: var(--background-color);
+}
+
+.btn-info {
+  background-color: var(--info-color);
+  color: var(--background-color);
+}
+
+.btn:disabled,
+.btn.disabled {
+  background-color: var(--disabled-color);
+  color: var(--secondary-color);
+}
+
+/* ===================== FORMULARIOS ===================== */
+.form-control,
+input,
+select,
+textarea {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
+  color: var(--primary-color);
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: var(--input-bg);
+  border-color: var(--btn-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(57, 255, 20, 0.25);
+}
+
+.form-control::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: var(--secondary-color);
+  opacity: 1;
+}
+
+/* ===================== TARJETAS ===================== */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+/* ===================== PRODUCTOS ===================== */
+.product-card {
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+  background-color: var(--card-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.product-card .product-img {
+  height: 200px;
+  object-fit: cover;
+  transition: all var(--transition-fast);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-card .product-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.product-card .product-description {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.product-card .product-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--btn-color);
+}
+
+/* ===================== BLOG ===================== */
+.blog-card {
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+  background-color: var(--card-bg);
+  overflow: hidden;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.blog-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card .blog-img {
+  height: 200px;
+  object-fit: cover;
+  transition: all var(--transition-fast);
+}
+
+.blog-card:hover .blog-img {
+  transform: scale(1.05);
+}
+
+.blog-card .blog-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color) !important; /* Forzar color blanco */
+}
+
+.blog-card .blog-excerpt {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.extra-text {
+  transition: max-height 0.3s ease-in-out; /* Only transition max-height */
+  overflow: hidden;
+  max-height: 0; /* Hidden by default */
+  color: var(--secondary-color);
+  margin-bottom: 1rem; /* Add margin to separate from the button */
+}
+
+.card-body.expanded .extra-text {
+  max-height: 500px; /* Sufficiently large value to show all text */
+}
+
+
+
+.blog-card .card-title {
+  color: var(--primary-color) !important; /* Asegurar que el título de la tarjeta sea blanco */
+}
+
+.blog-card .card-text {
+  color: var(--secondary-color); /* Asegurar que el texto de la tarjeta sea gris claro */
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  background-color: var(--header-color);
+  border-top: 1px solid var(--border-color);
+  padding: calc(var(--section-padding) * 1.5) 0;
+}
+
+footer h5 {
+  color: var(--btn-color);
+  font-family: var(--heading-font);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+footer h5::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--btn-color);
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+footer a:hover {
+  color: var(--btn-color);
+  transform: translateX(8px);
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+footer .social-icons a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+footer .social-icons a:hover {
+  background-color: var(--btn-color);
+  color: var(--background-color);
+  transform: translateY(-4px);
+  border-color: var(--btn-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+footer .copyright {
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  padding-top: 1rem;
+}
+
+/* ===================== BÚSQUEDA ===================== */
+.search-group {
+  min-width: 180px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  min-width: 180px;
+  background-color: var(--input-bg);
+  border-radius: var(--input-radius);
+  padding-left: 20px;
+  box-sizing: border-box;
+  color: var(--primary-color);
+  border: 1px solid var(--input-border);
+}
+
+.search-bar::placeholder {
+  padding-left: 0px;
+  color: var(--secondary-color);
+  opacity: 1;
+}
+
+/* ===================== FORMULARIO DE INICIO DE SESIÓN ===================== */
+
+.form-signin img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.form-signin h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-signin .form-floating {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+.form-signin .form-control {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.form-signin button {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+/* ===================== EQUIPO ===================== */
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid var(--primary-color);
+}
+
+.team-member h4 {
+  margin-top: 15px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 991.98px) {
+  nav.navbar {
+    padding: 18px 12px !important;
+  }
+
+  .navbar-collapse {
+    padding: 24px 0;
+  }
+
+  .navbar-nav > .nav-item {
+    margin-bottom: 12px;
+  }
+
+  .navbar-nav > .nav-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .logotype {
+    height: 24px;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer h5::after {
+    left: 25%;
+    width: 50%;
+  }
+
+  footer .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ===================== UTILIDADES ===================== */
+.text-primary {
+  color: var(--btn-color) !important;
+}
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+.text-success {
+  color: var(--success-color) !important;
+}
+.text-danger {
+  color: var(--danger-color) !important;
+}
+.text-warning {
+  color: var(--warning-color) !important;
+}
+.text-info {
+  color: var(--info-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--btn-color) !important;
+}
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+.bg-success {
+  background-color: var(--success-color) !important;
+}
+.bg-danger {
+  background-color: var(--danger-color) !important;
+}
+.bg-warning {
+  background-color: var(--warning-color) !important;
+}
+.bg-info {
+  background-color: var(--info-color) !important;
+}
+
+.text-muted {
+  color: var(--secondary-color) !important;
+}
+
+/* ===================== ANIMACIONES ===================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-slow) ease-in-out;
+}
+
+/* ===================== LOADING ===================== */
+.spinner-border {
+  border-color: var(--btn-color);
+  border-right-color: transparent;
+}
+
+/* ===================== TOAST NOTIFICATIONS ===================== */
+.toast-container {
+  z-index: 1055;
+}
+
+.toast {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.toast-header {
+  background-color: var(--header-color);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--primary-color);
+}
+
+.toast-body {
+  color: var(--primary-color);
+}

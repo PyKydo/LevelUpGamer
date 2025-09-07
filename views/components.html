@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Componentes - Level-Up Gamer</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos personalizados -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../img/isotype.png" />
+    <style>
+      /* Estilos específicos para la página de componentes */
+      .component-section {
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .component-title {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+      .component-description {
+        color: var(--secondary-color);
+        margin-bottom: 2rem;
+      }
+      .component-preview {
+        padding: 2rem;
+        background-color: var(--background-color);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        margin-bottom: 1rem;
+      }
+      .code-preview {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow-1">
+      <div class="container py-5">
+        <h1 class="mb-4">Guía de Componentes</h1>
+        <p class="lead mb-5">
+          Esta página muestra todos los componentes disponibles en Level-Up
+          Gamer con sus variantes y estilos.
+        </p>
+
+        <!-- Header Component Section -->
+        <section class="component-section">
+          <h2 class="component-title">Header</h2>
+          <p class="component-description">
+            El header principal del sitio con navegación y búsqueda.
+          </p>
+          <div class="component-preview">
+            <!-- El header ya está visible arriba -->
+          </div>
+        </section>
+
+        <!-- Product Card Component Section -->
+        <section class="component-section">
+          <h2 class="component-title">Tarjeta de Producto</h2>
+          <p class="component-description">
+            Tarjetas para mostrar productos en el catálogo.
+          </p>
+          <div class="component-preview">
+            <div class="row">
+              <div class="col-md-4">
+                <div id="product-card-container"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Blog Card Component Section -->
+        <section class="component-section">
+          <h2 class="component-title">Tarjeta de Blog</h2>
+          <p class="component-description">
+            Tarjetas para mostrar entradas del blog.
+          </p>
+          <div class="component-preview">
+            <div class="row">
+              <div class="col-md-4">
+                <div id="blog-card-container"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer Component Section -->
+        <section class="component-section">
+          <h2 class="component-title">Footer</h2>
+          <p class="component-description">
+            El footer principal del sitio con enlaces y newsletter.
+          </p>
+          <div class="component-preview">
+            <!-- El footer se mostrará automáticamente abajo -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/card-components.js"></script>
+    <script>
+      // Cargar ejemplos de componentes cuando el DOM esté listo
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ejemplo de tarjeta de producto
+        loadProductCard(document.getElementById("product-card-container"), {
+          id: 1,
+          title: "Control Xbox Series X",
+          description:
+            "Control inalámbrico para Xbox Series X con conexión Bluetooth",
+          price: 59990,
+          originalPrice: 69990,
+          image: "../img/products/AC001-xbox-controller.webp",
+          category: "Accesorios",
+        });
+
+        // Ejemplo de tarjeta de blog
+        loadBlogCard(document.getElementById("blog-card-container"), {
+          id: 1,
+          title: "Las mejores novedades del CES 2025",
+          excerpt:
+            "Descubre las últimas innovaciones en tecnología gaming presentadas en el CES 2025.",
+          date: "2025-09-07",
+          image: "../img/blog/ASUS-ROG-CES25.jpg",
+          category: "Tecnología",
+          author: "Juan Pérez",
+        });
+      });
+    </script>
+  </body>
+</html>

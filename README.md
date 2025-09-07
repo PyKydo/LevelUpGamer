@@ -24,16 +24,54 @@ npm install
 
 3. Abre el archivo index.html en tu navegador favorito
 
+**Nota**: El proyecto utiliza módulos ES6, por lo que debe servirse desde un servidor web local para evitar errores de CORS. Puedes usar:
+
+- Live Server (extensión de VS Code)
+- `python -m http.server` (Python 3)
+- `npx serve` (Node.js)
+
 ### Estructura de Archivos
 
 ```
 LevelUpGamer/
 ├── components/         # Componentes reutilizables (header, footer, cards)
 ├── css/               # Estilos
+│   ├── main.css       # Estilos consolidados y optimizados
+│   └── admin.css      # Estilos específicos del panel de administración
 ├── data/             # Archivos JSON con datos
 ├── img/              # Imágenes
-├── js/               # Scripts
+│   ├── blog/         # Imágenes del blog
+│   └── products/     # Imágenes de productos
+├── js/               # Scripts organizados modularmente
+│   ├── components/   # Sistema de componentes reutilizables
+│   │   ├── base-component.js    # Clase base para componentes
+│   │   ├── button.js           # Componente de botón
+│   │   ├── card.js             # Componente de tarjeta
+│   │   ├── modal.js            # Componente de modal
+│   │   ├── form.js             # Componente de formulario
+│   │   ├── notification.js     # Sistema de notificaciones
+│   │   ├── loading.js          # Componentes de carga
+│   │   └── component-factory.js # Factory para crear componentes
+│   ├── examples/     # Ejemplos de uso de componentes
+│   │   └── component-usage.js  # Demostraciones de componentes
+│   ├── core/         # Archivos principales de la aplicación
+│   │   ├── app.js    # Aplicación principal y gestión de módulos
+│   │   └── config.js # Configuración global y constantes
+│   ├── utils/        # Utilidades y servicios
+│   │   ├── helpers.js    # Funciones auxiliares
+│   │   ├── validations.js # Sistema de validaciones unificado
+│   │   └── api.js        # Servicio de API y manejo de datos
+│   ├── modules/      # Módulos específicos por funcionalidad
+│   │   ├── products.js   # Gestión de productos
+│   │   ├── cart.js       # Carrito de compras
+│   │   ├── auth.js       # Autenticación y usuarios
+│   │   └── admin.js      # Panel de administración
+│   └── components.js # Componentes existentes
 └── views/            # Páginas del sitio
+    ├── admin/        # Páginas del panel de administración
+    ├── auth/         # Páginas de autenticación
+    ├── shop/         # Páginas de la tienda
+    └── component-demo.html # Demostración de componentes
 ```
 
 ## Contexto del Proyecto
@@ -82,14 +120,21 @@ Todos los requerimientos propuestos deben ser validados por el docente para dete
   - Implementar hipervínculos funcionales, imágenes, botones, formularios y un footer informativo.
   - Asegurar que todas las páginas estén interconectadas para una navegación coherente.
 - **Diseño con CSS**:
-  - Crear una hoja de estilos externa y personalizada.
+  - Crear una hoja de estilos externa y personalizada consolidada (`main.css`).
   - Aplicar estilos consistentes y atractivos en todas las páginas.
   - Utilizar selectores y propiedades CSS para personalizar el diseño.
   - Garantizar que el diseño sea responsivo.
+  - Implementar variables CSS para mantener consistencia en colores y espaciado.
 - **Validación con JavaScript**:
-  - Implementar validaciones en tiempo real para formularios.
+  - Implementar validaciones en tiempo real para formularios usando un sistema unificado.
   - Mostrar mensajes de error y sugerencias dinámicas.
   - Mejorar la experiencia del usuario mediante feedback claro.
+  - Usar módulos ES6 para organizar el código de manera modular.
+- **Arquitectura Modular**:
+  - Organizar el código JavaScript en módulos específicos por funcionalidad.
+  - Implementar un sistema de configuración centralizado.
+  - Separar responsabilidades entre utilidades, módulos y componentes.
+  - Usar import/export para mejor organización del código.
 - **Colaboración con GitHub**:
   - Crear un repositorio remoto público en GitHub.
   - Realizar commits con mensajes claros y descriptivos.
@@ -192,6 +237,8 @@ El proyecto consta de dos partes:
 
 ## Validaciones con JavaScript
 
+El sistema de validaciones está implementado de manera modular y unificada en `js/utils/validations.js`, proporcionando validaciones consistentes en toda la aplicación.
+
 ### Registro de Usuario / Crear Usuario (Admin)
 
 - **RUN**: Requerido, validar formato (sin puntos ni guion, entre 7-9 caracteres).
@@ -216,11 +263,12 @@ El proyecto consta de dos partes:
 
 ### Productos y Carrito
 
-- Listar productos desde un arreglo en JavaScript.
-- Implementar carrito de compras:
+- Listar productos desde un arreglo en JavaScript usando el módulo `products.js`.
+- Implementar carrito de compras usando el módulo `cart.js`:
   - Añadir productos.
   - Definir reglas de negocio.
   - Guardar en `localStorage`.
+  - Aplicar descuentos automáticos según las reglas de negocio.
 
 ### Validaciones para Producto (Admin)
 
@@ -231,6 +279,46 @@ El proyecto consta de dos partes:
 - **Stock Crítico**: Opcional, mínimo 0, solo enteros.
 - **Categorías**: Requerido, selector de categorías.
 - **Imagen**: Opcional.
+
+## Arquitectura del Sistema
+
+### Sistema de Componentes Reutilizables
+
+El proyecto incluye un sistema completo de componentes reutilizables que proporciona:
+
+- **BaseComponent**: Clase base abstracta para todos los componentes
+- **ComponentFactory**: Factory pattern para crear instancias de componentes
+- **Componentes disponibles**: Button, Card, Modal, Form, Notification, Loading
+- **Ciclo de vida**: Mount, render, update, unmount con eventos personalizados
+- **Validación integrada**: Sistema de validación de props y formularios
+- **Accesibilidad**: Soporte completo para ARIA y navegación por teclado
+- **Responsive design**: Componentes adaptables a diferentes tamaños de pantalla
+
+#### Demostración de Componentes
+
+Visita `views/component-demo.html` para ver todos los componentes en acción con ejemplos interactivos.
+
+### Módulos JavaScript
+
+El proyecto utiliza una arquitectura modular organizada en:
+
+- **Core**: Archivos principales de la aplicación (`app.js`, `config.js`)
+- **Components**: Sistema de componentes reutilizables (`js/components/`)
+- **Examples**: Ejemplos de uso de componentes (`js/examples/`)
+- **Utils**: Utilidades y servicios compartidos (`helpers.js`, `validations.js`, `api.js`)
+- **Modules**: Módulos específicos por funcionalidad (`products.js`, `cart.js`, `auth.js`, `admin.js`)
+
+### Sistema de Configuración
+
+- **Configuración centralizada**: Todas las constantes y configuraciones están en `js/core/config.js`
+- **Variables CSS**: Colores, espaciado y tipografías definidas en `:root` de `main.css`
+- **Reglas de validación**: Sistema unificado de validaciones con mensajes consistentes
+
+### Gestión de Estado
+
+- **localStorage**: Para persistencia de datos del usuario y carrito
+- **Módulos**: Cada módulo maneja su propio estado interno
+- **Eventos personalizados**: Para comunicación entre módulos
 
 ## Roles del Sistema
 

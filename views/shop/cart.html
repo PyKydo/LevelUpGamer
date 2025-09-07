@@ -15,8 +15,7 @@
       href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="../../css/styles.css" />
-    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
     <link rel="icon" type="image/png" href="../../img/isotype.png" />
   </head>
   <body class="d-flex flex-column min-vh-100">
@@ -24,8 +23,9 @@
     <div id="header"></div>
 
     <!-- Contenido principal -->
-    <main class="flex-grow-1">
-      <!-- Aquí va el contenido específico del carrito -->
+    <main class="flex-grow-1 container-fluid py-4">
+      <!-- Contenedor del carrito -->
+      <div id="cart-container"></div>
     </main>
 
     <!-- Footer Component -->
@@ -35,6 +35,6 @@
     <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../../js/components.js"></script>
-    <script src="../../js/main.js"></script>
+    <script type="module" src="../../js/core/app.js"></script>
   </body>
 </html>
