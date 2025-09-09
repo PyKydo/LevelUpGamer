@@ -253,20 +253,18 @@ textarea::placeholder {
   box-shadow: 0 5px 15px var(--shadow-color);
 }
 
-.product-card .product-img {
+.card .card-img-top {
   height: 200px;
   object-fit: cover;
-  transition: all var(--transition-fast);
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
 }
 
 .product-card:hover .product-img {
   transform: scale(1.05);
 }
 
-.product-card .product-title {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
+.card .card-title {
+  color: var(--primary-color) !important;
 }
 
 .product-card .product-description {
@@ -294,10 +292,7 @@ textarea::placeholder {
   box-shadow: 0 5px 15px var(--shadow-color);
 }
 
-.blog-card .card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
+
 
 .blog-card .blog-img {
   height: 200px;
@@ -309,11 +304,7 @@ textarea::placeholder {
   transform: scale(1.05);
 }
 
-.blog-card .blog-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
-  color: var(--primary-color) !important; /* Forzar color blanco */
-}
+
 
 .blog-card .blog-excerpt {
   font-size: 0.9rem;
@@ -335,87 +326,13 @@ textarea::placeholder {
 
 
 
-.blog-card .card-title {
-  color: var(--primary-color) !important; /* Asegurar que el título de la tarjeta sea blanco */
-}
+
 
 .blog-card .card-text {
   color: var(--secondary-color); /* Asegurar que el texto de la tarjeta sea gris claro */
 }
 
-/* ===================== FOOTER ===================== */
-footer {
-  background-color: var(--header-color);
-  border-top: 1px solid var(--border-color);
-  padding: calc(var(--section-padding) * 1.5) 0;
-}
 
-footer h5 {
-  color: var(--btn-color);
-  font-family: var(--heading-font);
-  margin-bottom: 1.5rem;
-  position: relative;
-  display: inline-block;
-}
-
-footer h5::after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: var(--btn-color);
-}
-
-footer a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: all var(--transition-fast);
-  display: inline-block;
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
-}
-
-footer a:hover {
-  color: var(--btn-color);
-  transform: translateX(8px);
-}
-
-footer .social-icons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-footer .social-icons a {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: var(--background-color);
-  border: 1px solid var(--border-color);
-  transition: all var(--transition-fast);
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-footer .social-icons a:hover {
-  background-color: var(--btn-color);
-  color: var(--background-color);
-  transform: translateY(-4px);
-  border-color: var(--btn-color);
-  box-shadow: 0 4px 8px var(--shadow-color);
-}
-
-footer .copyright {
-  color: var(--secondary-color);
-  font-size: var(--font-size-sm);
-  text-align: center;
-  padding-top: 1rem;
-}
 
 /* ===================== BÚSQUEDA ===================== */
 .search-group {
@@ -610,4 +527,28 @@ footer .copyright {
 
 .toast-body {
   color: var(--primary-color);
+}
+
+/* Custom styles for rounded tables */
+.rounded-table {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  border-collapse: separate; /* Important for border-radius to work on table */
+  border-spacing: 0;
+}
+
+.rounded-table thead th:first-child {
+  border-top-left-radius: var(--card-radius);
+}
+
+.rounded-table thead th:last-child {
+  border-top-right-radius: var(--card-radius);
+}
+
+.rounded-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--card-radius);
+}
+
+.rounded-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--card-radius);
 }

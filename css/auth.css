@@ -1,0 +1,221 @@
+.form-signin {
+  width: 100%;
+  max-width: 450px; /* Unified max-width */
+  padding: 2.5rem 2rem;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.form-signin .form-floating > label {
+  color: var(--secondary-color);
+}
+
+.form-signin .form-control {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--primary-color);
+}
+
+.form-signin .form-control:focus {
+  background-color: var(--input-bg);
+  border-color: var(--accent-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(30, 144, 255, 0.25);
+}
+
+.form-signin .btn-primary {
+  background-color: var(--btn-color);
+  border-color: var(--btn-color);
+  color: #000000;
+  font-weight: 500;
+}
+
+.form-signin .btn-primary:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.form-signin .text-primary {
+  color: var(--accent-color) !important;
+}
+
+.form-signin .text-body-secondary {
+  color: var(--secondary-color) !important;
+}
+
+.form-signin .form-check-label {
+  color: var(--secondary-color);
+}
+
+.form-signin .form-check-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Ensure content does not overlap */
+body {
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll for content that doesn't fit */
+main {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Ensure form is always visible */
+.form-signin {
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* Prevent content from spilling out */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0; /* Allow it to shrink */
+}
+
+main {
+  min-height: calc(100vh - 150px); /* Subtract header and footer height */
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Responsive for small screens */
+@media (max-height: 600px) {
+  main {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .form-signin {
+    padding: 1.5rem 1.5rem;
+    margin: 0.5rem auto;
+  }
+
+  .form-signin img {
+    margin: 0 auto 1rem auto;
+    width: 50px;
+    height: 40px;
+    max-height: 40px;
+    flex-shrink: 0;
+  }
+
+  .form-signin h1 {
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .form-floating {
+    margin-bottom: 1rem !important;
+  }
+
+  .form-check {
+    margin: 0.75rem 0 !important;
+  }
+
+  .btn {
+    margin-bottom: 1rem !important;
+  }
+
+  p {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* For very small screens */
+@media (max-height: 500px) {
+  main {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .form-signin {
+    padding: 1rem 1.5rem;
+    margin: 0.25rem auto;
+  }
+
+  .form-signin img {
+    margin: 0 auto 0.75rem auto;
+    width: 45px;
+    height: 36px;
+    max-height: 36px;
+    flex-shrink: 0;
+  }
+
+  .form-signin h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .form-floating {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .form-check {
+    margin: 0.5rem 0 !important;
+  }
+
+  .btn {
+    margin-bottom: 0.75rem !important;
+    padding: 0.5rem !important;
+  }
+
+  p {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+/* Adjust logo to not overlap */
+.form-signin img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  flex-shrink: 0; /* Prevent shrinking */
+  max-height: 100px; /* Fixed max height */
+  object-fit: contain; /* Maintain proportions */
+}
+
+/* Adjust title spacing */
+.form-signin h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Ensure form stays within the box */
+.form-signin form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Logo container */
+.logo-container {
+  flex-shrink: 0;
+  max-height: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+}

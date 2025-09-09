@@ -1,0 +1,43 @@
+#sidebar-wrapper {
+  background-color: var(--header-color);
+  padding: 20px; /* More space */
+  border-top-left-radius: 0; /* Top-left corner not rounded */
+  border-top-right-radius: var(--card-radius); /* More rounded */
+  border-bottom-left-radius: var(--card-radius); /* More rounded */
+  border-bottom-right-radius: var(--card-radius); /* More rounded */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Similar to card shadow */
+}
+
+#sidebar-wrapper .sidebar-heading {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+#sidebar-wrapper .list-group-item {
+  background-color: transparent;
+  color: var(--secondary-color); /* Lighter text for contrast */
+  border: none;
+  border-radius: var(--border-radius); /* Rounded items */
+  margin-bottom: 5px;
+  transition: all var(--transition-fast);
+}
+
+#sidebar-wrapper .list-group-item:hover,
+#sidebar-wrapper .list-group-item.active {
+  background-color: var(--accent-color); /* Electric Blue for hover/active */
+  color: var(--primary-color);
+}
+
+#sidebar-wrapper .list-group-item i {
+  margin-right: 10px;
+  color: var(--btn-color); /* Neon Green for icons */
+}
+
+#sidebar-wrapper .list-group-item:hover i,
+#sidebar-wrapper .list-group-item.active i {
+  color: var(--primary-color); /* White icons on hover/active */
+}
+
+#sidebar-wrapper .list-group-item.mt-auto {
+  margin-top: 30px !important; /* Increased vertical spacing */
+}

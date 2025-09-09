@@ -23,18 +23,58 @@
     <div id="header"></div>
 
     <!-- Contenido principal -->
-    <main class="flex-grow-1 container-fluid py-4">
-      <!-- Contenedor del carrito -->
-      <div id="cart-container"></div>
+    <main class="container my-5">
+      <h2 class="mb-4 text-center">Mi Carrito de Compras</h2>
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-dark table-striped table-hover align-middle rounded-table">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Producto</th>
+                  <th>Precio Unitario</th>
+                  <th>Cantidad</th>
+                  <th>Subtotal</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+                <!-- Los items del carrito se cargarán aquí -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4" class="text-end"><strong>Subtotal:</strong></td>
+                  <td id="cart-total">$0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="4" class="text-end"><strong>Descuento:</strong></td>
+                  <td id="cart-discount">$0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="4" class="text-end"><strong>Total Final:</strong></td>
+                  <td id="cart-final-total">$0</td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+            <button class="btn btn-primary btn-lg">Proceder al Pago</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer Component -->
-    <div id="footer"></div>
+    <footer id="main-footer"></footer>
 
     <!-- Scripts -->
-    <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../../js/components.js"></script>
-    <script type="module" src="../../js/core/app.js"></script>
+    <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

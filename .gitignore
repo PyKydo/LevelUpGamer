@@ -42,3 +42,8 @@ img/products/.cache/
 
 # Keep package-lock for consistency
 # package-lock.json
+GEMINI.md
+
+docs/
+
+

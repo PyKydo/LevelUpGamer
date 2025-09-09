@@ -17,7 +17,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul
-          class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2 gap-2 gap-md-3"
+          class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2 gap-2 gap-md-3"
         >
           <li class="nav-item">
             <a href="/index.html" class="nav-link home-item">Inicio</a>
@@ -38,22 +38,30 @@
               >Contacto</a
             >
           </li>
-          <li class="nav-item">
-            <a href="/views/auth/login.html">
-              <button
-                type="button"
-                class="btn btn-accent login-signup-btn"
-                aria-label="Registro / Iniciar Sesión"
-              >
-                <span class="bi bi-person-circle"></span>
-              </button>
-            </a>
-          </li>
         </ul>
       </div>
+      <a href="/views/shop/cart.html" class="d-none d-lg-block me-2">
+        <button
+          type="button"
+          class="btn btn-accent login-signup-btn"
+          aria-label="Carrito de Compras"
+        >
+          <span class="bi bi-cart"></span>
+          <span class="badge bg-primary rounded-pill" id="cart-count">0</span>
+        </button>
+      </a>
+      <a href="/views/auth/login.html" class="ms-auto d-none d-lg-block"> <!-- Added d-none d-lg-block to hide on small screens -->
+        <button
+          type="button"
+          class="btn btn-accent login-signup-btn"
+          aria-label="Registro / Iniciar Sesión"
+        >
+          <span class="bi bi-person-circle"></span>
+        </button>
+      </a>
     </div>
   </nav>
-  <div class="subheader py-3 bg-light border-bottom">
+  <div class="subheader py-3 bg-dark">
     <div class="container-fluid">
       <form
         class="row justify-content-center align-items-center gx-2"
@@ -68,7 +76,7 @@
               aria-label="Buscar"
             />
             <button
-              class="btn btn-outline-secondary search-btn"
+              class="btn btn-primary search-btn border border-secondary"
               type="submit"
               aria-label="Buscar"
             >
@@ -80,3 +88,4 @@
     </div>
   </div>
 </header>
+

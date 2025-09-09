@@ -4,35 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Level-Up Gamer - Home</title>
-    <!-- Bootstrap CSS -->
     <link
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Bootstrap Icons -->
     <link
       href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <!-- Estilos personalizados -->
     <link href="css/main.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="img/isotype.png" />
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <!-- Header Component -->
-    <div id="header"></div>
-    <!-- Contenido principal -->
-    <main>
-      <!-- Aquí va el contenido específico de la página -->
+    <header id="main-header"></header>
+    <main class="container my-5">
+      <div class="row" id="product-list"></div>
     </main>
 
-    <!-- Footer Component -->
     <div id="footer"></div>
 
-    <!-- Scripts -->
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/components.js"></script>
-    <script type="module" src="js/core/app.js"></script>
+    <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/products.js"></script>
   </body>
 </html>

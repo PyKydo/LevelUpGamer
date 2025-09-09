@@ -11,12 +11,18 @@ function loadComponent(url, elementId) {
 // Ajustar rutas según la profundidad de la página actual
 function getBasePath() {
   const path = window.location.pathname;
-  const depth = path.split("/").length - 2;
-  // Si estamos en la raíz o en index.html, no necesitamos ../
-  if (path === "/" || path.endsWith("/index.html")) {
+  // Remove the filename to get the directory path
+  const dirPath = path.substring(0, path.lastIndexOf('/'));
+  // Split by '/' and filter out empty strings
+  const segments = dirPath.split('/').filter(segment => segment.length > 0);
+  // The number of '../' needed is the number of segments
+  const depth = segments.length;
+
+  if (depth === 0) { // If at root (e.g., /index.html or /)
     return "";
+  } else {
+    return "../".repeat(depth);
   }
-  return depth > 0 ? "../".repeat(depth) : "./";
 }
 
 // Función para actualizar las rutas en el componente cargado
@@ -49,5 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("footer")) {
     loadComponent(getBasePath() + "components/footer.html", "footer");
     setTimeout(() => updatePaths("footer"), 100);
+  }
+
+  // Cargar admin-sidebar
+  if (document.getElementById("admin-sidebar")) {
+    loadComponent(getBasePath() + "components/admin-sidebar.html", "admin-sidebar");
+    setTimeout(() => updatePaths("admin-sidebar"), 100);
   }
 });

@@ -90,7 +90,7 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <!-- Header Component -->
-    <div id="header"></div>
+    <header id="main-header"></header>
 
     <main
       class="d-flex align-items-center justify-content-center flex-grow-1 py-5"
@@ -101,9 +101,9 @@
             <div class="form-signin">
               <form id="contact-form">
                 <div class="text-center mb-4">
-                  <a href="../index.html">
+                  <a href="/index.html">
                     <img
-                      src="../img/logo.png"
+                      src="/img/logo.png"
                       alt="Logo Level-Up Gamer"
                       width="72"
                     />
@@ -166,37 +166,13 @@
     </main>
 
     <!-- Footer Component -->
-    <div id="footer"></div>
+    <footer id="main-footer"></footer>
 
     <!-- Scripts -->
-    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../js/components.js"></script>
-    <script type="module" src="../js/core/app.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const contactForm = document.getElementById("contact-form");
-
-        if (contactForm) {
-          contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(contactForm);
-            const name = formData.get("name");
-            const email = formData.get("email");
-            const comment = formData.get("comment");
-
-            console.log("Formulario de Contacto Enviado:", {
-              name,
-              email,
-              comment,
-            });
-
-            alert("Mensaje enviado con éxito! (Simulado)");
-            contactForm.reset(); // Limpiar el formulario
-          });
-        }
-      });
-    </script>
+    <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/validation.js"></script>
   </body>
 </html>

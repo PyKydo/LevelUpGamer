@@ -1,0 +1,26 @@
+[
+  {
+    "id": "post-1",
+    "title": "Los mejores juegos de 2025",
+    "image": "/img/blog/mejores-juegos-2025-4309642.webp",
+    "alt": "Post 1",
+    "summary": "Descubre nuestra selección de los títulos más destacados del año y por qué deberías jugarlos.",
+    "content": "Este año ha traído lanzamientos impresionantes en todas las plataformas. Desde aventuras épicas hasta shooters competitivos, te contamos cuáles son los juegos que no puedes perderte y qué los hace tan especiales para la comunidad gamer."
+  },
+  {
+    "id": "post-2",
+    "title": "Tips para mejorar en shooters",
+    "image": "/img/blog/Call-of-Duty-e-sports-304.jpg",
+    "alt": "Post 2",
+    "summary": "Consejos prácticos para subir de nivel y dominar los juegos de disparos en línea.",
+    "content": "Practica tu puntería a diario, aprende a moverte estratégicamente y estudia los mapas. Además, la comunicación con tu equipo y la gestión de recursos pueden marcar la diferencia en cada partida."
+  },
+  {
+    "id": "post-3",
+    "title": "Mejores productos este 2025",
+    "image": "/img/blog/ASUS-ROG-CES25.jpg",
+    "alt": "Post 3",
+    "summary": "Descubre los gadgets y accesorios más innovadores para gamers que llegan este año.",
+    "content": "Desde teclados mecánicos de última generación hasta monitores con tasas de refresco impresionantes, 2025 trae una ola de productos que mejorarán tu experiencia de juego. Analizamos los lanzamientos más esperados y te contamos cuáles valen la pena."
+  }
+]

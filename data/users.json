@@ -1,0 +1,23 @@
+[
+  {
+    "id": "user001",
+    "username": "admin",
+    "email": "admin@levelup.cl",
+    "password": "admin123",
+    "role": "admin"
+  },
+  {
+    "id": "user002",
+    "username": "john.doe",
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "role": "customer"
+  },
+  {
+    "id": "user003",
+    "username": "jane.smith",
+    "email": "jane.smith@duoc.cl",
+    "password": "securepass",
+    "role": "customer"
+  }
+]
