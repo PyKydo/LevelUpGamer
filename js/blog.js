@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         blogContainer.appendChild(postElement);
       });
 
-      // Funcionalidad para "Leer más" en las tarjetas del blog
       document.querySelectorAll('.btn-leer-mas').forEach(btn => {
           btn.addEventListener('click', () => {
               const cardBody = btn.closest('.card-body');
@@ -32,5 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       });
     })
-    .catch((error) => console.error("Error fetching blogs:", error));
+    .catch((error) => {});
 });

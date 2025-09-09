@@ -12,7 +12,7 @@ async function loadProducts() {
     const productContainer = document.getElementById('product-list');
     if (!productContainer) return;
 
-    const products = await getAvailableProducts(); // Use global function
+    const products = await getAvailableProducts();
     productContainer.innerHTML = ''; 
 
     products.forEach(product => {
@@ -50,7 +50,7 @@ async function loadProductDetail() {
         return;
     }
 
-    const products = await getAvailableProducts(); // Use global function
+    const products = await getAvailableProducts();
     const product = products.find(p => p.code === productId);
 
     if (product) {

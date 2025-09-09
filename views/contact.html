@@ -4,92 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto - Level-Up Gamer</title>
-    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
-    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages/contact.css" />
     <link rel="icon" type="image/png" href="../img/isotype.png" />
-    <style>
-      .form-signin {
-        width: 100%;
-        max-width: 600px; /* Ajustado para un formulario de contacto más grande */
-        padding: 2.5rem 2rem;
-        margin: 0 auto;
-        background: var(--card-bg);
-        border-radius: var(--card-radius);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border: 1px solid var(--border-color);
-      }
-      .form-signin .form-floating > label {
-        color: var(--secondary-color);
-      }
-      .form-signin .form-control {
-        background-color: var(--input-bg) !important;
-        border-color: var(--input-border);
-        color: var(--primary-color);
-      }
-      .form-signin .form-control:focus {
-        background-color: var(--input-bg);
-        border-color: var(--accent-color);
-        color: var(--primary-color);
-        box-shadow: 0 0 0 0.2rem rgba(30, 144, 255, 0.25);
-      }
-      /* Specific fix for textarea focus background */
-      .form-signin textarea.form-control:focus {
-        background-color: var(--input-bg); /* Ensure it stays dark */
-      }
-      .form-signin .btn-primary {
-        background-color: var(--btn-color);
-        border-color: var(--btn-color);
-        color: #000000;
-        font-weight: 500;
-      }
-      .form-signin .btn-primary:hover {
-        background-color: var(--accent-color);
-        border-color: var(--accent-color);
-        color: var(--primary-color);
-      }
-      .form-signin .text-primary {
-        color: var(--accent-color) !important;
-      }
-      /* Estilos específicos para el textarea */
-      .form-signin textarea.form-control {
-        min-height: 120px; /* Altura mínima para el área de texto */
-        resize: vertical; /* Permitir redimensionar verticalmente */
-        background-color: var(
-          --input-bg
-        ) !important; /* Asegurar fondo oscuro */
-      }
-
-      /* Explicitly set placeholder background to transparent */
-      .form-signin .form-control::placeholder {
-        color: transparent; /* Hidden by default */
-        background-color: transparent !important;
-      }
-
-      .form-signin .form-control:focus::placeholder,
-      .form-signin .form-control:not(:placeholder-shown)::placeholder {
-        color: var(--secondary-color); /* Visible when focused or has content */
-        opacity: 0.7;
-      }
-
-      /* Fix for form-floating label background */
-      .form-floating > textarea:focus ~ label::after,
-      .form-floating > textarea:not(:placeholder-shown) ~ label::after {
-        background-color: var(--input-bg) !important; /* Ensure dark background for floating label cover */
-      }
-    </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <!-- Header Component -->
     <header id="main-header"></header>
 
     <main
@@ -165,10 +94,8 @@
       </div>
     </main>
 
-    <!-- Footer Component -->
     <footer id="main-footer"></footer>
 
-    <!-- Scripts -->
     <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/js/cart.js"></script>

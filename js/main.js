@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     loadComponent('/components/header.html', 'main-header', updateCartIcon);
     loadComponent('/components/footer.html', 'main-footer');
@@ -21,7 +20,7 @@ function loadComponent(url, elementId, callback) {
                 }
             }
         })
-        .catch(error => console.error(`Error loading component ${url}:`, error));
+        .catch(error => {});
 }
 
 async function getAvailableProducts() {
@@ -32,13 +31,9 @@ async function getAvailableProducts() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         products = await response.json();
-        console.log('getAvailableProducts: Products fetched from JSON:', products);
-        localStorage.setItem('adminProducts', JSON.stringify(products)); // Always update localStorage
+        localStorage.setItem('adminProducts', JSON.stringify(products));
     } catch (error) {
-        console.error("Could not fetch products from JSON:", error);
-        // Fallback to localStorage if fetching from JSON fails
         products = JSON.parse(localStorage.getItem('adminProducts')) || [];
-        console.log('getAvailableProducts: Falling back to localStorage:', products);
     }
     return products;
 }

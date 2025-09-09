@@ -1,4 +1,3 @@
-// Función para cargar un componente de tarjeta de producto
 async function loadProductCard(container, productData) {
   try {
     const response = await fetch("/components/product-card.html");
@@ -7,7 +6,6 @@ async function loadProductCard(container, productData) {
     tempDiv.innerHTML = template;
     const card = tempDiv.firstChild;
 
-    // Actualizar el contenido con los datos del producto
     card.querySelector("[data-img]").src = productData.image;
     card.querySelector("[data-img]").alt = productData.title;
     card.querySelector("[data-title]").textContent = productData.title;
@@ -29,7 +27,6 @@ async function loadProductCard(container, productData) {
       badge.classList.add(`badge-${productData.category.toLowerCase()}`);
     }
 
-    // Configurar botones
     card
       .querySelector("[data-product-id]")
       .setAttribute("data-product-id", productData.id);
@@ -38,12 +35,9 @@ async function loadProductCard(container, productData) {
     ).href = `/views/shop/product-detail.html?id=${productData.id}`;
 
     container.appendChild(card);
-  } catch (error) {
-    console.error("Error cargando la tarjeta de producto:", error);
-  }
+  } catch (error) {}
 }
 
-// Función para cargar un componente de tarjeta de blog
 async function loadBlogCard(container, blogData) {
   try {
     const response = await fetch("/components/blog-card.html");
@@ -52,13 +46,11 @@ async function loadBlogCard(container, blogData) {
     tempDiv.innerHTML = template;
     const card = tempDiv.firstChild;
 
-    // Actualizar el contenido con los datos del blog
     card.querySelector("[data-img]").src = blogData.image;
     card.querySelector("[data-img]").alt = blogData.title;
     card.querySelector("[data-title]").textContent = blogData.title;
     card.querySelector("[data-excerpt]").textContent = blogData.excerpt;
 
-    // Formatear la fecha
     const date = new Date(blogData.date);
     card.querySelector("[data-date]").innerHTML = `
             <i class="bi bi-calendar3"></i> ${date.toLocaleDateString()}
@@ -74,38 +66,10 @@ async function loadBlogCard(container, blogData) {
       card.querySelector("[data-author] span").textContent = blogData.author;
     }
 
-    // Configurar enlace
     card.querySelector(
       "[data-blog-link]"
     ).href = `/views/blog-detail.html?id=${blogData.id}`;
 
     container.appendChild(card);
-  } catch (error) {
-    console.error("Error cargando la tarjeta de blog:", error);
-  }
+  } catch (error) {}
 }
-
-// Ejemplo de uso:
-// Para productos:
-// const productContainer = document.querySelector('#products-container');
-// loadProductCard(productContainer, {
-//     id: 1,
-//     title: "Producto Ejemplo",
-//     description: "Descripción del producto",
-//     price: 99.99,
-//     originalPrice: 129.99,
-//     image: "/img/products/producto.jpg",
-//     category: "Gaming"
-// });
-
-// Para blogs:
-// const blogContainer = document.querySelector('#blog-container');
-// loadBlogCard(blogContainer, {
-//     id: 1,
-//     title: "Título del Blog",
-//     excerpt: "Extracto del post...",
-//     date: "2025-09-06",
-//     image: "/img/blog/post.jpg",
-//     category: "Gaming",
-//     author: "John Doe"
-// });

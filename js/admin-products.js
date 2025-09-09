@@ -13,9 +13,8 @@ async function getProducts() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             products = await response.json();
-            saveProducts(products); // Save initial data to localStorage
+            saveProducts(products);
         } catch (error) {
-            console.error("Could not fetch initial products:", error);
             products = [];
         }
     }
@@ -58,10 +57,7 @@ async function deleteProduct(event, productId) {
 
         if (products.length < initialLength) {
             saveProducts(products);
-            loadProducts(); // Reload table to reflect changes
-            console.log('Producto con ID', productId, 'eliminado y guardado.');
-        } else {
-            console.log('Producto con ID', productId, 'no encontrado.');
+            loadProducts();
         }
     }
 }

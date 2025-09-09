@@ -6,12 +6,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const USERS_STORAGE_KEY = 'adminUsers';
 
-    // Helper to get users from localStorage
     function getUsers() {
         return JSON.parse(localStorage.getItem(USERS_STORAGE_KEY)) || [];
     }
 
-    // Helper to save users to localStorage
     function saveUsers(users) {
         localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
     }
@@ -31,9 +29,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('user-region').value = user.region;
             document.getElementById('user-commune').value = user.commune;
 
-            document.getElementById('user-run').disabled = true; // Disable RUN for editing
+            document.getElementById('user-run').disabled = true;
         } else {
-            // If user not found, redirect to add new user form
             window.location.href = '/views/admin/user-form.html';
             return;
         }
@@ -53,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const commune = document.getElementById('user-commune').value;
 
         const userData = {
-            id: userId || 'user_' + Date.now(), // Generate a simple ID for new users
+            id: userId || 'user_' + Date.now(),
             run,
             birthdate,
             name,
@@ -68,25 +65,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         let users = getUsers();
 
         if (userId) {
-            // Update existing user
             const index = users.findIndex(u => u.id === userId);
             if (index !== -1) {
                 users[index] = { ...users[index], ...userData };
-                console.log('Usuario actualizado:', userData);
             }
         } else {
-            // Add new user
-            // Basic validation: check for unique RUN
             if (users.some(u => u.run === run)) {
                 alert('Error: El RUN de usuario ya existe.');
                 return;
             }
             users.push(userData);
-            console.log('Nuevo usuario añadido:', userData);
         }
 
         saveUsers(users);
-        // Redirect back to the user list page
         window.location.href = '/views/admin/users.html';
     });
 });

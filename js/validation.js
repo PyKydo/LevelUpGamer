@@ -1,24 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Listener para el formulario de Login
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', handleLoginSubmit);
     }
 
-    // Listener para el formulario de Registro
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', handleRegisterSubmit);
     }
 
-    // Listener para el formulario de Contacto
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', handleContactSubmit);
     }
 });
-
-// --- MANEJADORES DE EVENTOS (HANDLERS) ---
 
 function handleLoginSubmit(event) {
     event.preventDefault();
@@ -35,10 +30,9 @@ function handleLoginSubmit(event) {
         return;
     }
 
-    // Simulate successful login
-    localStorage.setItem('currentUserEmail', email); // Store user email
+    localStorage.setItem('currentUserEmail', email);
     alert('Inicio de sesión exitoso (simulado).');
-    window.location.href = '/'; // Redirect to home page
+    window.location.href = '/';
 }
 
 function handleRegisterSubmit(event) {
@@ -47,7 +41,7 @@ function handleRegisterSubmit(event) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
-    const birthdate = document.getElementById('birthdate').value; // Get birthdate
+    const birthdate = document.getElementById('birthdate').value;
 
     if (!name || name.length > 100) {
         alert('El nombre es requerido y no debe exceder los 100 caracteres.');
@@ -74,10 +68,9 @@ function handleRegisterSubmit(event) {
         return;
     }
 
-    // Simulate successful registration
-    localStorage.setItem('currentUserEmail', email); // Store user email
+    localStorage.setItem('currentUserEmail', email);
     alert('Registro exitoso (simulado).');
-    window.location.href = '/views/auth/login.html'; // Redirect to login page
+    window.location.href = '/views/auth/login.html';
 }
 
 function handleContactSubmit(event) {
@@ -105,11 +98,9 @@ function handleContactSubmit(event) {
     event.target.reset();
 }
 
-// --- FUNCIONES DE VALIDACIÓN ---
-
 function validateEmail(email) {
     if (!email) return false;
-    const emailRegex = /^[\n@]+@[\n@]+\.[\n@]+$/;
+    const emailRegex = /^\S+@\S+\.\S+$/;
     if (!emailRegex.test(email)) return false;
 
     const allowedDomains = ['@duoc.cl', '@profesor.duoc.cl', '@gmail.com'];
@@ -117,7 +108,7 @@ function validateEmail(email) {
 }
 
 function validateAge(birthdateString) {
-    if (!birthdateString) return false; // Birthdate is required
+    if (!birthdateString) return false;
 
     const birthdate = new Date(birthdateString);
     const today = new Date();
@@ -129,9 +120,8 @@ function validateAge(birthdateString) {
     return age >= 18;
 }
 
-// Function to simulate logout
 function logout() {
     localStorage.removeItem('currentUserEmail');
     alert('Sesión cerrada.');
-    window.location.href = '/'; // Redirect to home page
+    window.location.href = '/';
 }

@@ -13,9 +13,8 @@ async function getUsers() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             users = await response.json();
-            saveUsers(users); // Save initial data to localStorage
+            saveUsers(users);
         } catch (error) {
-            console.error("Could not fetch initial users:", error);
             users = [];
         }
     }
@@ -57,10 +56,7 @@ async function deleteUser(event, userId) {
 
         if (users.length < initialLength) {
             saveUsers(users);
-            loadUsers(); // Reload table to reflect changes
-            console.log('Usuario con ID', userId, 'eliminado y guardado.');
-        } else {
-            console.log('Usuario con ID', userId, 'no encontrado.');
+            loadUsers();
         }
     }
 }

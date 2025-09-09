@@ -1,0 +1,111 @@
+/* ===================== HEADER Y NAVEGACIÓN ===================== */
+header {
+  background-color: var(--header-color);
+  box-shadow: var(--card-shadow);
+  min-height: var(--navbar-height);
+}
+
+nav.navbar {
+  padding: 18px 24px !important;
+}
+
+.logo {
+  width: var(--logo-size);
+  margin-right: 30px;
+}
+
+.logotype {
+  height: 30px;
+  width: auto;
+  margin-left: 8px;
+}
+
+/* ===================== BÚSQUEDA ===================== */
+.search-group {
+  min-width: 180px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===================== ADMIN LAYOUT ===================== */
+#admin-wrapper {
+  display: flex;
+}
+
+#admin-sidebar {
+  background-color: var(--header-color);
+  border-right: 1px solid var(--border-color);
+  min-height: 100vh;
+  width: 250px;
+  transition: margin-left 0.3s;
+}
+
+#admin-sidebar .sidebar-heading {
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+#page-content-wrapper {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+#admin-wrapper.toggled #admin-sidebar {
+  margin-left: -250px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ===================== RESPONSIVE LAYOUT ===================== */
+@media (max-width: 991.98px) {
+  nav.navbar {
+    padding: 18px 12px !important;
+  }
+
+  .navbar-collapse {
+    padding: 24px 0;
+  }
+
+  .navbar-nav > .nav-item {
+    margin-bottom: 12px;
+  }
+
+  .navbar-nav > .nav-item:last-child {
+    margin-bottom: 0;
+  }
+
+  #admin-sidebar {
+    margin-left: -250px;
+  }
+
+  #admin-wrapper.toggled #admin-sidebar {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .logotype {
+    height: 24px;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer h5::after {
+    left: 25%;
+    width: 50%;
+  }
+
+  footer .social-icons {
+    justify-content: center;
+  }
+}

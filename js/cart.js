@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Removed updateCartIcon() from here
-
     if (window.location.pathname.includes('cart.html')) {
         displayCartItems();
     }
@@ -8,13 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getCart() {
     const cartData = localStorage.getItem('cart');
-    console.log('getCart: Raw cart data from localStorage:', cartData);
     return JSON.parse(cartData) || [];
 }
 
 function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
-    console.log('saveCart: Cart saved to localStorage:', cart);
     updateCartIcon();
 }
 
@@ -35,12 +31,9 @@ function addToCart(productId) {
 function updateCartIcon() {
     const cart = getCart();
     const cartIcon = document.getElementById('cart-count');
-    console.log('updateCartIcon: cartIcon element:', cartIcon);
     if (cartIcon) {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        console.log('updateCartIcon: Calculated totalItems:', totalItems);
         cartIcon.textContent = totalItems;
-        console.log('updateCartIcon: cartIcon.textContent after update:', cartIcon.textContent);
     }
 }
 
@@ -53,11 +46,7 @@ async function displayCartItems() {
     if (!cartItemsContainer || !cartTotalElement) return;
 
     const cart = getCart();
-    console.log('displayCartItems: Cart content:', cart);
-
     const products = await getAvailableProducts(); 
-    console.log('displayCartItems: Available products:', products);
-    products.forEach(p => console.log('Available product code:', p.code)); // Log all available product codes
 
     cartItemsContainer.innerHTML = '';
     let subtotal = 0;
@@ -71,10 +60,8 @@ async function displayCartItems() {
     }
 
     cart.forEach(item => {
-        console.log('Cart item ID:', item.id); // Log cart item ID
         const product = products.find(p => p.code === item.id); 
         if (product) {
-            console.log('displayCartItems: Found product in available products:', product);
             const itemSubtotal = product.price * item.quantity;
             subtotal += itemSubtotal;
 
@@ -88,9 +75,7 @@ async function displayCartItems() {
                 <td><button class="btn btn-danger btn-sm" onclick="removeFromCart('${item.id}')">Eliminar</button></td>
             `;
             cartItemsContainer.appendChild(cartRow);
-        } else {
-            console.log('displayCartItems: Product not found in available products for item.id:', item.id);
-        }
+        } 
     });
 
     cartTotalElement.textContent = subtotal.toLocaleString('es-CL');
@@ -104,7 +89,7 @@ async function displayCartItems() {
         if (isDuocUser) {
             discount = subtotal * 0.20;
             finalTotal = subtotal - discount;
-            if (discountElement) discountElement.textContent = `-${discount.toLocaleString('es-CL')}`; // Display as negative
+            if (discountElement) discountElement.textContent = `-${discount.toLocaleString('es-CL')}`;
             alert('¡Felicidades! Se ha aplicado un 20% de descuento por ser usuario Duoc.');
         }
     }

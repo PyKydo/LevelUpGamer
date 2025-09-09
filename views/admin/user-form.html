@@ -4,27 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin - Formulario de Usuario</title>
-    <!-- Bootstrap CSS -->
     <link
       href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Bootstrap Icons -->
     <link
       href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <!-- Estilos personalizados -->
     <link href="../../css/main.css" rel="stylesheet" />
-    <link href="../../css/admin.css" rel="stylesheet" />
+    <link href="../../css/layout.css" rel="stylesheet" />
+    <link href="../../css/components.css" rel="stylesheet" />
+    <link href="../../css/pages/admin.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="../../img/isotype.png" />
   </head>
   <body>
     <div class="d-flex" id="admin-wrapper">
-      <!-- Sidebar -->
       <div id="admin-sidebar"></div>
 
-      <!-- Page Content -->
       <main id="page-content-wrapper">
         <header class="admin-header">
           <h1 class="h2">Crear / Editar Usuario</h1>
@@ -38,7 +35,6 @@
             <div class="card-body">
               <form id="user-form" novalidate>
                 <div class="row">
-                  <!-- RUN -->
                   <div class="col-md-6 mb-3">
                     <label for="user-run" class="form-label">RUN</label>
                     <input
@@ -50,7 +46,6 @@
                     />
                     <div class="invalid-feedback"></div>
                   </div>
-                  <!-- Fecha de Nacimiento -->
                   <div class="col-md-6 mb-3">
                     <label for="user-birthdate" class="form-label"
                       >Fecha de Nacimiento</label
@@ -65,7 +60,6 @@
                 </div>
 
                 <div class="row">
-                  <!-- Nombre -->
                   <div class="col-md-6 mb-3">
                     <label for="user-name" class="form-label">Nombre</label>
                     <input
@@ -77,7 +71,6 @@
                     />
                     <div class="invalid-feedback"></div>
                   </div>
-                  <!-- Apellidos -->
                   <div class="col-md-6 mb-3">
                     <label for="user-lastname" class="form-label"
                       >Apellidos</label
@@ -94,7 +87,6 @@
                 </div>
 
                 <div class="row">
-                  <!-- Correo -->
                   <div class="col-md-6 mb-3">
                     <label for="user-email" class="form-label"
                       >Correo Electrónico</label
@@ -108,7 +100,6 @@
                     />
                     <div class="invalid-feedback"></div>
                   </div>
-                  <!-- Tipo de Usuario -->
                   <div class="col-md-6 mb-3">
                     <label for="user-role" class="form-label"
                       >Tipo de Usuario</label
@@ -125,7 +116,6 @@
                   </div>
                 </div>
 
-                <!-- Dirección -->
                 <div class="mb-3">
                   <label for="user-address" class="form-label">Dirección</label>
                   <input
@@ -139,31 +129,26 @@
                 </div>
 
                 <div class="row">
-                  <!-- Región -->
                   <div class="col-md-6 mb-3">
                     <label for="user-region" class="form-label">Región</label>
                     <select class="form-select" id="user-region" required>
                       <option selected disabled value="">
                         Selecciona una región...
                       </option>
-                      <!-- Las opciones se cargarán con JS -->
                     </select>
                     <div class="invalid-feedback"></div>
                   </div>
-                  <!-- Comuna -->
                   <div class="col-md-6 mb-3">
                     <label for="user-commune" class="form-label">Comuna</label>
                     <select class="form-select" id="user-commune" required>
                       <option selected disabled value="">
                         Selecciona una comuna...
                       </option>
-                      <!-- Las opciones se cargarán con JS -->
                     </select>
                     <div class="invalid-feedback"></div>
                   </div>
                 </div>
 
-                <!-- Botones -->
                 <div class="d-flex justify-content-end">
                   <a href="users.html" class="btn btn-secondary me-2"
                     >Cancelar</a
@@ -177,18 +162,14 @@
           </div>
         </div>
       </main>
-      <!-- /#page-content-wrapper -->
     </div>
-    <!-- /#admin-wrapper -->
 
-    <!-- Scripts -->
     <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/components.js"></script>
     <script src="../../js/main.js"></script>
     <script src="../../js/admin-user-form.js"></script>
     <script>
-      // Toggle sidebar
       document
         .getElementById("menu-toggle")
         .addEventListener("click", function () {

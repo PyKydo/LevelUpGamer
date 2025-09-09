@@ -6,12 +6,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const PRODUCTS_STORAGE_KEY = 'adminProducts';
 
-    // Helper to get products from localStorage
     function getProducts() {
         return JSON.parse(localStorage.getItem(PRODUCTS_STORAGE_KEY)) || [];
     }
 
-    // Helper to save products to localStorage
     function saveProducts(products) {
         localStorage.setItem(PRODUCTS_STORAGE_KEY, JSON.stringify(products));
     }
@@ -28,9 +26,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('product-stock').value = product.stock;
             document.getElementById('product-image').value = product.image;
             document.getElementById('product-description').value = product.description;
-            document.getElementById('product-code').disabled = true; // Disable code for editing
+            document.getElementById('product-code').disabled = true;
         } else {
-            // If product not found, redirect to add new product form
             window.location.href = '/views/admin/product-form.html';
             return;
         }
@@ -60,25 +57,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         let products = getProducts();
 
         if (productId) {
-            // Update existing product
             const index = products.findIndex(p => p.code === productId);
             if (index !== -1) {
                 products[index] = { ...products[index], ...productData };
-                console.log('Producto actualizado:', productData);
             }
         } else {
-            // Add new product
-            // Basic validation: check for unique product code
             if (products.some(p => p.code === code)) {
                 alert('Error: El código de producto ya existe.');
                 return;
             }
             products.push(productData);
-            console.log('Nuevo producto añadido:', productData);
         }
 
         saveProducts(products);
-        // Redirect back to the product list page
         window.location.href = '/views/admin/products.html';
     });
 });

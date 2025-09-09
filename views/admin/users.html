@@ -13,16 +13,16 @@
       href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../../css/main.css" />
-    <link rel="stylesheet" href="../../css/admin.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/pages/admin.css" />
     <link rel="icon" type="image/png" href="../../img/isotype.png" />
   </head>
 
   <body>
     <div class="d-flex" id="admin-wrapper">
-      <!-- Sidebar -->
       <div id="admin-sidebar"></div>
 
-      <!-- Page Content -->
       <main id="page-content-wrapper">
         <div class="container-fluid py-4">
           <h2 class="mb-4">Gestión de Usuarios</h2>
@@ -38,14 +38,12 @@
               </tr>
             </thead>
             <tbody id="user-table-body">
-              <!-- Los usuarios se cargarán aquí -->
             </tbody>
           </table>
         </div>
       </main>
     </div>
 
-    <!-- Scripts -->
     <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/js/components.js"></script>

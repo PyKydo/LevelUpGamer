@@ -4,25 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito - Level-Up Gamer</title>
-    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
-    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
     <link rel="icon" type="image/png" href="../../img/isotype.png" />
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <!-- Header Component -->
-    <div id="header"></div>
+    <header id="header"></header>
 
-    <!-- Contenido principal -->
     <main class="container my-5">
       <h2 class="mb-4 text-center">Mi Carrito de Compras</h2>
       <div class="card shadow-sm mb-4">
@@ -40,7 +37,6 @@
                 </tr>
               </thead>
               <tbody id="cart-items">
-                <!-- Los items del carrito se cargarán aquí -->
               </tbody>
               <tfoot>
                 <tr>
@@ -68,10 +64,8 @@
       </div>
     </main>
 
-    <!-- Footer Component -->
     <footer id="main-footer"></footer>
 
-    <!-- Scripts -->
     <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/js/cart.js"></script>
