@@ -1,53 +1,54 @@
-function loadComponent(url, elementId) {
-  fetch(url)
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById(elementId).innerHTML = data;
-    })
-    .catch((error) => {});
-}
-
-function getBasePath() {
-  const path = window.location.pathname;
-  const dirPath = path.substring(0, path.lastIndexOf('/'));
-  const segments = dirPath.split('/').filter(segment => segment.length > 0);
-  const depth = segments.length;
-
-  if (depth === 0) {
-    return "";
-  } else {
-    return "../".repeat(depth);
-  }
-}
-
 function updatePaths(elementId) {
   const basePath = getBasePath();
   const element = document.getElementById(elementId);
 
   if (element) {
     element.querySelectorAll('a[href^="/"]').forEach((a) => {
-      a.href = basePath + a.getAttribute("href").substring(1);
+      const originalHref = a.getAttribute("href");
+      if (originalHref.startsWith('/')) {
+        a.href = basePath + originalHref.substring(1);
+      }
     });
 
     element.querySelectorAll('img[src^="/"]').forEach((img) => {
-      img.src = basePath + img.getAttribute("src").substring(1);
+      const originalSrc = img.getAttribute("src");
+       if (originalSrc.startsWith('/')) {
+        img.src = basePath + originalSrc.substring(1);
+      }
     });
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  const basePath = getBasePath();
+
   if (document.getElementById("header")) {
-    loadComponent(getBasePath() + "components/header.html", "header");
-    setTimeout(() => updatePaths("header"), 100);
+    loadComponent(basePath + "components/header.html", "header", () => {
+        updatePaths("header");
+        if (typeof updateCartIcon === 'function') {
+            updateCartIcon();
+        }
+    });
+  }
+  
+  if (document.getElementById("main-header")) {
+    loadComponent(basePath + "components/header.html", "main-header", () => {
+        updatePaths("main-header");
+        if (typeof updateCartIcon === 'function') {
+            updateCartIcon();
+        }
+    });
   }
 
   if (document.getElementById("footer")) {
-    loadComponent(getBasePath() + "components/footer.html", "footer");
-    setTimeout(() => updatePaths("footer"), 100);
+    loadComponent(basePath + "components/footer.html", "footer", () => updatePaths("footer"));
+  }
+  
+  if (document.getElementById("main-footer")) {
+    loadComponent(basePath + "components/footer.html", "main-footer", () => updatePaths("main-footer"));
   }
 
   if (document.getElementById("admin-sidebar")) {
-    loadComponent(getBasePath() + "components/admin-sidebar.html", "admin-sidebar");
-    setTimeout(() => updatePaths("admin-sidebar"), 100);
+    loadComponent(basePath + "components/admin-sidebar.html", "admin-sidebar", () => updatePaths("admin-sidebar"));
   }
 });

@@ -1,35 +1,50 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const blogContainer = document.getElementById("blog-container");
+  if (!blogContainer) return;
 
-  fetch("/data/blogs.json")
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((post) => {
-        const postElement = document.createElement("div");
-        postElement.classList.add("col-md-6", "col-lg-4", "blog-col");
+  try {
+    const basePath = getBasePath();
+    const [blogResponse, componentResponse] = await Promise.all([
+      fetch(`${basePath}data/blogs.json`),
+      fetch(`${basePath}components/blog-card.html`)
+    ]);
 
-        postElement.innerHTML = `
-          <div class="card blog-card">
-            <img src="${post.image}" class="card-img-top" alt="${post.alt}">
-            <div class="card-body">
-              <h5 class="card-title">${post.title}</h5>
-              <p class="card-text">${post.summary}</p>
-              <div class="extra-text">${post.content}</div>
-              <button class="btn btn-primary btn-leer-mas" type="button">Leer más</button>
-            </div>
-          </div>
-        `;
+    if (!blogResponse.ok || !componentResponse.ok) {
+      throw new Error('Failed to fetch blog data or template');
+    }
 
-        blogContainer.appendChild(postElement);
-      });
+    const posts = await blogResponse.json();
+    const template = await componentResponse.text();
 
-      document.querySelectorAll('.btn-leer-mas').forEach(btn => {
-          btn.addEventListener('click', () => {
-              const cardBody = btn.closest('.card-body');
-              cardBody.classList.toggle('expanded');
-              btn.textContent = cardBody.classList.contains('expanded') ? 'Leer menos' : 'Leer más';
-          });
-      });
-    })
-    .catch((error) => {});
+    posts.forEach((post) => {
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = template;
+      const card = tempDiv.firstElementChild;
+
+      card.querySelector("[data-img]").src = basePath + post.image.substring(1);
+      card.querySelector("[data-img]").alt = post.alt || post.title;
+      card.querySelector("[data-title]").textContent = post.title;
+      card.querySelector("[data-excerpt]").textContent = post.summary;
+      card.querySelector("[data-content]").textContent = post.content;
+
+      const col = document.createElement("div");
+      col.className = "col-md-6 col-lg-4 blog-col";
+      col.appendChild(card);
+      blogContainer.appendChild(col);
+    });
+
+    document.querySelectorAll('.btn-leer-mas').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const cardBody = btn.closest('.card-body');
+            const extraText = cardBody.querySelector('.extra-text');
+            const isExpanded = extraText.style.display === 'block';
+
+            extraText.style.display = isExpanded ? 'none' : 'block';
+            btn.textContent = isExpanded ? 'Leer más' : 'Leer menos';
+        });
+    });
+
+  } catch (error) {
+    blogContainer.innerHTML = "<p>Error al cargar las entradas del blog.</p>";
+  }
 });

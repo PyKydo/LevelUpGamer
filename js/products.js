@@ -16,25 +16,7 @@ async function loadProducts() {
     productContainer.innerHTML = ''; 
 
     products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'col-md-4 mb-4';
-        productCard.innerHTML = `
-            <div class="card">
-                <a href="/views/shop/product-detail.html?id=${product.code}">
-                    <img src="/img/products/${product.image}" class="card-img-top" alt="${product.name}">
-                </a>
-                <div class="card-body">
-                    <a href="/views/shop/product-detail.html?id=${product.code}" class="text-decoration-none text-white">
-                        <h5 class="card-title">${product.name}</h5>
-                    </a>
-                    <p class="card-text">$${product.price.toLocaleString('es-CL')}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <button class="btn btn-success btn-sm" onclick="addToCart('${product.code}')">Añadir al Carrito</button>
-                    </div>
-                </div>
-            </div>
-        `;
-        productContainer.appendChild(productCard);
+        loadProductCard(productContainer, product);
     });
 }
 

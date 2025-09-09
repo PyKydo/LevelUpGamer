@@ -280,3 +280,16 @@ textarea::placeholder {
     background-position: -200% 0;
   }
 }
+
+#cart-count {
+  background-color: transparent;
+  color: black;
+}
+
+.btn-accent:hover #cart-count {
+  color: white;
+}
+
+.nav-link.active {
+  color: var(--accent-color) !important;
+}
