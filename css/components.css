@@ -349,3 +349,76 @@ textarea::placeholder {
   background-color: #FF69B4; /* HotPink */
 }
 
+#productCarousel {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* Makes the icon black */
+}
+
+.carousel-caption-overlay {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-caption p {
+  background-color: var(--btn-color);
+  color: var(--background-color); /* Black text */
+  font-weight: bold;
+  padding: 2px 8px; /* Add some padding for the background */
+  border-radius: 3px; /* Slightly rounded corners for the background */
+  display: inline-block; /* To make padding and background work correctly */
+}
+
+.carousel-caption-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.carousel-image-wrapper:hover + .carousel-caption-hidden {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-item {
+  position: relative;
+  overflow: hidden; /* Ensures overlay and scale don't overflow */
+}
+
+.carousel-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: block; /* Ensure it takes up space */
+  height: 100%; /* Take full height of parent */
+  width: 100%; /* Take full width of parent */
+}
+
+.carousel-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* Start transparent */
+  transition: background-color 0.3s ease;
+  z-index: 1; /* Above image, below caption */
+}
+
+.carousel-image-wrapper:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay on hover */
+}
+
+.carousel-image-wrapper img {
+  transition: transform 0.3s ease;
+}
+
+.carousel-image-wrapper:hover img {
+  transform: scale(1.05); /* Image scaling on hover */
+}
+
+

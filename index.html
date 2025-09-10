@@ -22,6 +22,19 @@
   <body class="d-flex flex-column min-vh-100">
     <header id="main-header"></header>
     <main class="container my-5">
+      <div id="productCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carousel-products-container">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
       <div class="row" id="product-list"></div>
     </main>
 
@@ -37,5 +50,6 @@
     <script src="js/components.js"></script>
     <script src="js/card-components.js"></script>
     <script src="js/products.js"></script>
+    <script src="js/carousel.js"></script>
   </body>
 </html>
