@@ -22,6 +22,8 @@
   
   --input-bg: #222222;
   --input-border: #666666;
+  --input-bg-disabled: #2a2a2a;
+  --input-border-disabled: #888888;
   --card-bg: #1c1c1c;
   --shadow-color: rgba(30, 144, 255, 0.15);
 

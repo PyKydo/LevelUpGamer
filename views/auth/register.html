@@ -48,10 +48,34 @@
                     class="form-control"
                     id="name"
                     name="name"
-                    placeholder="Nombre completo"
+                    placeholder="Nombre"
                     required
                   />
-                  <label for="name">Nombre completo</label>
+                  <label for="name">Nombre</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Apellidos"
+                    required
+                  />
+                  <label for="lastName">Apellidos</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="run"
+                    name="run"
+                    placeholder="RUN (sin puntos ni guion)"
+                    required
+                  />
+                  <label for="run">RUN</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -99,6 +123,56 @@
                     required
                   />
                   <label for="birthdate">Fecha de Nacimiento</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select form-control"
+                    id="userType"
+                    name="userType"
+                    required
+                  >
+                    <option value="">Seleccione Tipo de Usuario</option>
+                    <option value="customer">Cliente</option>
+                    <option value="admin">Administrador</option>
+                  </select>
+                  <label for="userType">Tipo de Usuario</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select form-control"
+                    id="region"
+                    name="region"
+                    required
+                  >
+                    <option value="">Seleccione Región</option>
+                  </select>
+                  <label for="region">Región</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select form-control"
+                    id="commune"
+                    name="commune"
+                    required
+                  >
+                    <option value="">Seleccione Comuna</option>
+                  </select>
+                  <label for="commune">Comuna</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    name="address"
+                    placeholder="Dirección"
+                    required
+                  />
+                  <label for="address">Dirección</label>
                 </div>
 
                 <button class="btn btn-primary w-100 py-2 my-3" type="submit">

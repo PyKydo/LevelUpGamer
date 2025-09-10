@@ -74,6 +74,57 @@ async function getAvailableProducts() {
   return products;
 }
 
+// Global callback for regions JSONP
+window.handleRegionsResponse = function(data) {
+  const regionSelect = document.getElementById('region');
+  if (!regionSelect) return;
+
+  regionSelect.innerHTML = '<option value="">Seleccione Región</option>';
+  data.forEach(region => {
+    const option = document.createElement('option');
+    option.value = region.codigo;
+    option.textContent = region.nombre;
+    regionSelect.appendChild(option);
+  });
+};
+
+// Global callback for communes JSONP
+window.handleCommunesResponse = function(data) {
+  const communeSelect = document.getElementById('commune');
+  if (!communeSelect) return;
+
+  communeSelect.innerHTML = '<option value="">Seleccione Comuna</option>';
+  data.forEach(commune => {
+    const option = document.createElement('option');
+    option.value = commune.codigo;
+    option.textContent = commune.nombre;
+    communeSelect.appendChild(option);
+  });
+};
+
+function loadJSONP(url, callbackName) {
+  const script = document.createElement('script');
+  script.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + callbackName;
+  script.async = true;
+  document.head.appendChild(script);
+  script.onload = function() {
+    document.head.removeChild(script);
+  };
+  script.onerror = function() {
+    console.error('Error loading JSONP script:', url);
+    document.head.removeChild(script);
+  };
+}
+
+function loadRegions() {
+  loadJSONP('https://apis.digital.gob.cl/dpa/regiones', 'handleRegionsResponse');
+}
+
+function loadCommunes(regionCode) {
+  if (!regionCode) return;
+  loadJSONP(`https://apis.digital.gob.cl/dpa/regiones/${regionCode}/comunas`, 'handleCommunesResponse');
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
@@ -85,4 +136,33 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("active");
     }
   });
+
+  // Load regions and set up commune loading for register page
+  if (currentPath.includes('/views/auth/register.html')) {
+    loadRegions();
+
+    const regionSelect = document.getElementById('region');
+    const communeSelect = document.getElementById('commune');
+
+    if (communeSelect) {
+      communeSelect.disabled = true;
+    }
+
+    if (regionSelect) {
+      regionSelect.addEventListener('change', (event) => {
+        const selectedRegionCode = event.target.value;
+        if (selectedRegionCode) {
+          if (communeSelect) {
+            communeSelect.disabled = false;
+          }
+          loadCommunes(selectedRegionCode);
+        } else {
+          if (communeSelect) {
+            communeSelect.disabled = true;
+            communeSelect.innerHTML = '<option value="">Seleccione Comuna</option>';
+          }
+        }
+      });
+    }
+  }
 });
