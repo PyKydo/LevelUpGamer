@@ -1,34 +1,6 @@
 # Level-Up Gamer 🎮
 
-## Configuración del Proyecto
-
-### Prerrequisitos
-
-- Node.js (versión 14 o superior)
-- npm (viene con Node.js)
-
-### Instalación
-
-1. Clona el repositorio:
-
-```bash
-git clone https://github.com/PyKydo/LevelUpGamer.git
-cd LevelUpGamer
-```
-
-2. Instala las dependencias:
-
-```bash
-npm install
-```
-
-3. Abre el archivo index.html en tu navegador favorito
-
 **Nota**: El proyecto utiliza módulos ES6, por lo que debe servirse desde un servidor web local para evitar errores de CORS. Puedes usar:
-
-- Live Server (extensión de VS Code)
-- `python -m http.server` (Python 3)
-- `npx serve` (Node.js)
 
 ### Estructura de Archivos
 
