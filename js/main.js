@@ -31,9 +31,7 @@ function loadComponent(url, elementId, callback) {
         }
       }
     })
-    .catch((error) => {
-      console.error(`Error loading component ${url} into ${elementId}:`, error);
-    });
+    .catch((error) => {});
 }
 
 function updatePaths(elementId) {
@@ -75,13 +73,13 @@ async function getAvailableProducts() {
 }
 
 // Global callback for regions JSONP
-window.handleRegionsResponse = function(data) {
-  const regionSelect = document.getElementById('region');
+window.handleRegionsResponse = function (data) {
+  const regionSelect = document.getElementById("region");
   if (!regionSelect) return;
 
   regionSelect.innerHTML = '<option value="">Seleccione Región</option>';
-  data.forEach(region => {
-    const option = document.createElement('option');
+  data.forEach((region) => {
+    const option = document.createElement("option");
     option.value = region.codigo;
     option.textContent = region.nombre;
     regionSelect.appendChild(option);
@@ -89,13 +87,13 @@ window.handleRegionsResponse = function(data) {
 };
 
 // Global callback for communes JSONP
-window.handleCommunesResponse = function(data) {
-  const communeSelect = document.getElementById('commune');
+window.handleCommunesResponse = function (data) {
+  const communeSelect = document.getElementById("commune");
   if (!communeSelect) return;
 
   communeSelect.innerHTML = '<option value="">Seleccione Comuna</option>';
-  data.forEach(commune => {
-    const option = document.createElement('option');
+  data.forEach((commune) => {
+    const option = document.createElement("option");
     option.value = commune.codigo;
     option.textContent = commune.nombre;
     communeSelect.appendChild(option);
@@ -103,26 +101,75 @@ window.handleCommunesResponse = function(data) {
 };
 
 function loadJSONP(url, callbackName) {
-  const script = document.createElement('script');
-  script.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + callbackName;
+  const script = document.createElement("script");
+  script.src =
+    url + (url.includes("?") ? "&" : "?") + "callback=" + callbackName;
   script.async = true;
   document.head.appendChild(script);
-  script.onload = function() {
+  script.onload = function () {
     document.head.removeChild(script);
   };
-  script.onerror = function() {
-    console.error('Error loading JSONP script:', url);
+  script.onerror = function () {
     document.head.removeChild(script);
   };
 }
 
 function loadRegions() {
-  loadJSONP('https://apis.digital.gob.cl/dpa/regiones', 'handleRegionsResponse');
+  loadJSONP(
+    "https://apis.digital.gob.cl/dpa/regiones",
+    "handleRegionsResponse"
+  );
 }
 
 function loadCommunes(regionCode) {
   if (!regionCode) return;
-  loadJSONP(`https://apis.digital.gob.cl/dpa/regiones/${regionCode}/comunas`, 'handleCommunesResponse');
+  loadJSONP(
+    `https://apis.digital.gob.cl/dpa/regiones/${regionCode}/comunas`,
+    "handleCommunesResponse"
+  );
+}
+
+function updateLoginStatus() {
+  const currentUserString = localStorage.getItem("currentUser");
+  const userStatusContainer = document.getElementById("user-status-container");
+  const navbarDropdown = document.getElementById("navbarDropdown");
+  const loggedInUserDisplayNameSpan = document.getElementById(
+    "logged-in-user-display"
+  );
+  const loginButton = document.getElementById("login-button");
+  const logoutButtonDropdown = document.getElementById(
+    "logout-button-dropdown"
+  );
+  const adminLinkDropdown = document.getElementById("admin-link-dropdown");
+  const adminLinkDivider = document.getElementById("admin-link-divider");
+
+  if (currentUserString) {
+    const currentUser = JSON.parse(currentUserString);
+
+    if (userStatusContainer) userStatusContainer.classList.remove("d-none");
+    if (loginButton) loginButton.classList.add("d-none");
+
+    if (loggedInUserDisplayNameSpan) {
+      loggedInUserDisplayNameSpan.textContent = `${currentUser.name} ${currentUser.lastName}`;
+    }
+
+    if (logoutButtonDropdown) {
+      logoutButtonDropdown.addEventListener("click", logout);
+    }
+
+    if (adminLinkDropdown && adminLinkDivider) {
+      if (currentUser && currentUser.userType === "admin") {
+        adminLinkDropdown.classList.remove("d-none");
+        adminLinkDivider.classList.remove("d-none");
+      } else {
+        adminLinkDropdown.classList.add("d-none");
+        adminLinkDivider.classList.add("d-none");
+      }
+    }
+  } else {
+    if (userStatusContainer) userStatusContainer.classList.add("d-none");
+    if (loginButton) loginButton.classList.remove("d-none");
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -137,19 +184,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  updateLoginStatus(); // Call on DOMContentLoaded
+
+  // Prevent access to register.html if logged in
+  if (
+    currentPath.includes("/views/auth/register.html") &&
+    localStorage.getItem("currentUser")
+  ) {
+    window.location.href = "/";
+    return; // Stop further execution on this page
+  }
+
   // Load regions and set up commune loading for register page
-  if (currentPath.includes('/views/auth/register.html')) {
+  if (currentPath.includes("/views/auth/register.html")) {
     loadRegions();
 
-    const regionSelect = document.getElementById('region');
-    const communeSelect = document.getElementById('commune');
+    const regionSelect = document.getElementById("region");
+    const communeSelect = document.getElementById("commune");
 
     if (communeSelect) {
       communeSelect.disabled = true;
     }
 
     if (regionSelect) {
-      regionSelect.addEventListener('change', (event) => {
+      regionSelect.addEventListener("change", (event) => {
         const selectedRegionCode = event.target.value;
         if (selectedRegionCode) {
           if (communeSelect) {
@@ -159,7 +217,8 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           if (communeSelect) {
             communeSelect.disabled = true;
-            communeSelect.innerHTML = '<option value="">Seleccione Comuna</option>';
+            communeSelect.innerHTML =
+              '<option value="">Seleccione Comuna</option>';
           }
         }
       });
