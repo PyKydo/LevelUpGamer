@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito - Level-Up Gamer</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
-      href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../../css/main.css" />
     <link rel="stylesheet" href="../../css/layout.css" />
@@ -25,7 +27,9 @@
       <div class="card shadow-sm mb-4">
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-dark table-striped table-hover align-middle rounded-table">
+            <table
+              class="table table-dark table-striped table-hover align-middle rounded-table"
+            >
               <thead>
                 <tr>
                   <th>Imagen</th>
@@ -36,21 +40,26 @@
                   <th>Acción</th>
                 </tr>
               </thead>
-              <tbody id="cart-items">
-              </tbody>
+              <tbody id="cart-items"></tbody>
               <tfoot>
                 <tr>
-                  <td colspan="4" class="text-end"><strong>Subtotal:</strong></td>
+                  <td colspan="4" class="text-end">
+                    <strong>Subtotal:</strong>
+                  </td>
                   <td id="cart-total">$0</td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td colspan="4" class="text-end"><strong>Descuento:</strong></td>
+                  <td colspan="4" class="text-end">
+                    <strong>Descuento:</strong>
+                  </td>
                   <td id="cart-discount">$0</td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td colspan="4" class="text-end"><strong>Total Final:</strong></td>
+                  <td colspan="4" class="text-end">
+                    <strong>Total Final:</strong>
+                  </td>
                   <td id="cart-final-total">$0</td>
                   <td></td>
                 </tr>
@@ -66,7 +75,11 @@
 
     <footer id="main-footer"></footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <script src="../../js/main.js"></script>
     <script src="../../js/cart.js"></script>
     <script src="../../js/components.js"></script>
