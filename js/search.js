@@ -8,7 +8,7 @@ function initializeSearchBar() {
 
   let allProducts = [];
 
-  // Fetch products once
+
   getAvailableProducts().then((products) => {
     allProducts = products;
   });
@@ -61,7 +61,7 @@ function initializeSearchBar() {
     }
   });
 
-  // Hide search results when clicking outside
+
   document.addEventListener("click", (event) => {
     if (
       !searchBar.contains(event.target) &&
@@ -72,4 +72,3 @@ function initializeSearchBar() {
   });
 }
 
-// Remove the DOMContentLoaded listener from here

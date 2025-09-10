@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!carouselContainer) return;
 
     const products = await getAvailableProducts();
-    const carouselProducts = products.slice(0, 3); // Select the first 3 products
+    const carouselProducts = products.slice(0, 3);
 
     if (carouselProducts.length === 0) {
         carouselContainer.innerHTML = '<p>No hay productos para el carrusel.</p>';

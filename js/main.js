@@ -72,7 +72,6 @@ async function getAvailableProducts() {
   return products;
 }
 
-// Global callback for regions JSONP
 window.handleRegionsResponse = function (data) {
   const regionSelect = document.getElementById("region");
   if (!regionSelect) return;
@@ -86,7 +85,6 @@ window.handleRegionsResponse = function (data) {
   });
 };
 
-// Global callback for communes JSONP
 window.handleCommunesResponse = function (data) {
   const communeSelect = document.getElementById("commune");
   if (!communeSelect) return;
@@ -184,18 +182,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  updateLoginStatus(); // Call on DOMContentLoaded
+  updateLoginStatus();
 
-  // Prevent access to register.html if logged in
   if (
     currentPath.includes("/views/auth/register.html") &&
     localStorage.getItem("currentUser")
   ) {
     window.location.href = "/";
-    return; // Stop further execution on this page
+    return;
   }
 
-  // Load regions and set up commune loading for register page
   if (currentPath.includes("/views/auth/register.html")) {
     loadRegions();
 

@@ -49,7 +49,7 @@ function handleRegisterSubmit(event) {
     const commune = document.getElementById('commune').value;
     const address = document.getElementById('address').value;
 
-    // Basic validations (already present or updated)
+
     if (!validateLength(name, 1, 50)) {
         alert('El nombre es requerido y no debe exceder los 50 caracteres.');
         return;
@@ -95,7 +95,7 @@ function handleRegisterSubmit(event) {
         return;
     }
 
-    // Check if user already exists
+
     let users = JSON.parse(localStorage.getItem('users')) || [];
     const userExists = users.some(user => user.email === email || user.run === run);
     if (userExists) {
@@ -103,7 +103,7 @@ function handleRegisterSubmit(event) {
         return;
     }
 
-    // Generate a simple ID (for academic purposes)
+
     const newUserId = 'user' + (users.length + 1).toString().padStart(3, '0');
 
     const newUser = {
@@ -112,7 +112,7 @@ function handleRegisterSubmit(event) {
         lastName: lastName,
         run: run,
         email: email,
-        password: password, // In a real app, hash this!
+        password: password,
         birthdate: birthdate,
         userType: userType,
         region: region,
@@ -123,15 +123,15 @@ function handleRegisterSubmit(event) {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
 
-    localStorage.setItem('currentUserEmail', email); // Log in the new user
-    // Apply discount logic
+    localStorage.setItem('currentUserEmail', email);
+
     const isDuocEmail = email.endsWith('@duoc.cl') || email.endsWith('@profesor.duoc.cl');
     if (isDuocEmail) {
         alert('¡Registro exitoso! Como estudiante o profesor de Duoc UC, has recibido un 20% de descuento en tu primera compra. ¡Bienvenido a LevelUp Gamer!');
     } else {
         alert('Registro exitoso. ¡Bienvenido a LevelUp Gamer!');
     }
-    window.location.href = '/views/auth/login.html'; // Redirect to login page
+    window.location.href = '/views/auth/login.html';
 }
 
 function handleContactSubmit(event) {
