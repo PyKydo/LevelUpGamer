@@ -67,7 +67,7 @@
         class="row justify-content-center align-items-center gx-2"
         role="search"
       >
-        <div class="col-12 col-md-8 col-lg-6 d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 d-flex justify-content-center search-container-wrapper">
           <div class="input-group search-group w-100">
             <input
               class="form-control search-bar bg-white text-dark border border-secondary"
@@ -82,6 +82,9 @@
             >
               <span class="bi bi-search"></span>
             </button>
+          </div>
+          <div id="search-results" class="list-group position-absolute w-100" style="z-index: 1000; max-height: 300px; overflow-y: auto; display: none;">
+            <!-- Search results will be appended here -->
           </div>
         </div>
       </form>

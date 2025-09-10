@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (typeof updateCartIcon === 'function') {
             updateCartIcon();
         }
+        if (typeof initializeSearchBar === 'function') {
+            initializeSearchBar();
+        }
     });
   }
   
@@ -36,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
         updatePaths("main-header");
         if (typeof updateCartIcon === 'function') {
             updateCartIcon();
+        }
+        if (typeof initializeSearchBar === 'function') {
+            initializeSearchBar();
         }
     });
   }

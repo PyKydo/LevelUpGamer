@@ -421,4 +421,37 @@ textarea::placeholder {
   transform: scale(1.05); /* Image scaling on hover */
 }
 
+.footer-logo {
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.footer-logo:hover {
+  transform: scale(1.05); /* Scale up by 5% on hover */
+}
+
+.search-container-wrapper {
+  position: relative;
+}
+
+#search-results {
+  top: 100%; /* Position below the search bar */
+  left: 0;
+  background-color: var(--card-bg); /* Dark background for results */
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 var(--input-radius) var(--input-radius);
+}
+
+#search-results .list-group-item {
+  padding: 8px 15px; /* Reduced padding */
+}
+
+#search-results .list-group-item h6 {
+  font-size: 0.9rem; /* Smaller font for name */
+}
+
+#search-results .list-group-item small {
+  font-size: 0.75rem; /* Smaller font for price */
+}
+
 
