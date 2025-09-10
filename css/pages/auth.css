@@ -1,6 +1,6 @@
 .form-signin {
   width: 100%;
-  max-width: 450px; /* Unified max-width */
+  max-width: 450px; 
   padding: 2.5rem 2rem;
   margin: 0 auto;
   background: var(--card-bg);
@@ -56,39 +56,39 @@
   border-color: var(--accent-color);
 }
 
-/* Ensure content does not overlap */
+
 body {
   padding-top: 0;
   padding-bottom: 0;
   overflow-x: hidden;
 }
 
-/* Smooth scroll for content that doesn't fit */
+
 main {
   overflow-y: auto;
   scroll-behavior: smooth;
 }
 
-/* Ensure form is always visible */
+
 .form-signin {
   position: relative;
   z-index: 1;
-  overflow: hidden; /* Prevent content from spilling out */
+  overflow: hidden; 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 0; /* Allow it to shrink */
+  min-height: 0; 
 }
 
 main {
-  min-height: calc(100vh - 150px); /* Subtract header and footer height */
+  min-height: calc(100vh - 150px); 
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-/* Responsive for small screens */
+
 @media (max-height: 600px) {
   main {
     padding-top: 0.5rem;
@@ -132,7 +132,7 @@ main {
   }
 }
 
-/* For very small screens */
+
 @media (max-height: 500px) {
   main {
     padding-top: 0.25rem;
@@ -177,25 +177,25 @@ main {
   }
 }
 
-/* Adjust logo to not overlap */
+
 .form-signin img {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto 1.5rem auto;
-  flex-shrink: 0; /* Prevent shrinking */
-  max-height: 100px; /* Fixed max height */
-  object-fit: contain; /* Maintain proportions */
+  flex-shrink: 0; 
+  max-height: 100px; 
+  object-fit: contain; 
 }
 
-/* Adjust title spacing */
+
 .form-signin h1 {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
-  flex-shrink: 0; /* Prevent shrinking */
+  flex-shrink: 0; 
 }
 
-/* Ensure form stays within the box */
+
 .form-signin form {
   display: flex;
   flex-direction: column;
@@ -203,7 +203,7 @@ main {
   min-height: 0;
 }
 
-/* Logo container */
+
 .logo-container {
   flex-shrink: 0;
   max-height: 120px;

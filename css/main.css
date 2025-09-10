@@ -1,55 +1,55 @@
-/* ===================== VARIABLES CSS ===================== */
+
 :root {
-  /* Colores principales */
+  
   --primary-color: #ffffff;
   --secondary-color: #d3d3d3;
   --background-color: #000000;
   --header-color: #1c1c1c;
   --border-color: #444444;
 
-  /* Colores de marca */
+  
   --btn-color: #39ff14;
   --accent-color: #1e90ff;
   --hover-color: #20cb01;
 
-  /* Colores de estado */
+  
   --danger-color: #ff1744;
   --success-color: #00e676;
   --warning-color: #ffc107;
   --info-color: #00bcd4;
   --disabled-color: #888888;
 
-  /* Colores de interfaz */
+  
   --input-bg: #222222;
   --input-border: #666666;
   --card-bg: #1c1c1c;
   --shadow-color: rgba(30, 144, 255, 0.15);
 
-  /* Tipografías */
+  
   --font-stack: "Roboto", sans-serif;
   --heading-font: "Orbitron", sans-serif;
 
-  /* Tamaños y espaciado */
+  
   --navbar-height: 64px;
   --logo-size: 72px;
   --container-max-width: 1200px;
   --section-padding: 48px;
 
-  /* Bordes y radios */
+  
   --input-radius: 12px;
   --card-radius: 18px;
   --border-radius: 16px;
 
-  /* Transiciones */
+  
   --transition-fast: 0.2s;
   --transition-slow: 0.4s;
 
-  /* Tipografía */
+  
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-sm: 0.875rem;
 
-  /* Breakpoints */
+  
   --breakpoint-xs: 575.98px;
   --breakpoint-sm: 767.98px;
   --breakpoint-md: 991.98px;
@@ -57,7 +57,7 @@
   --breakpoint-xl: 1399.98px;
 }
 
-/* ===================== RESET Y BASE ===================== */
+
 * {
   box-sizing: border-box;
 }
@@ -72,7 +72,7 @@ body {
   padding: 0;
 }
 
-/* ===================== TIPOGRAFÍA ===================== */
+
 h1,
 h2,
 h3,
@@ -108,7 +108,7 @@ p {
   color: var(--secondary-color);
 }
 
-/* ===================== UTILIDADES GLOBALES ===================== */
+
 .text-primary {
   color: var(--btn-color) !important;
 }

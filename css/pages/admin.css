@@ -1,11 +1,11 @@
 #sidebar-wrapper {
   background-color: var(--header-color);
-  padding: 20px; /* More space */
-  border-top-left-radius: 0; /* Top-left corner not rounded */
-  border-top-right-radius: var(--card-radius); /* More rounded */
-  border-bottom-left-radius: var(--card-radius); /* More rounded */
-  border-bottom-right-radius: var(--card-radius); /* More rounded */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Similar to card shadow */
+  padding: 20px; 
+  border-top-left-radius: 0; 
+  border-top-right-radius: var(--card-radius); 
+  border-bottom-left-radius: var(--card-radius); 
+  border-bottom-right-radius: var(--card-radius); 
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -15,29 +15,29 @@
 
 #sidebar-wrapper .list-group-item {
   background-color: transparent;
-  color: var(--secondary-color); /* Lighter text for contrast */
+  color: var(--secondary-color); 
   border: none;
-  border-radius: var(--border-radius); /* Rounded items */
+  border-radius: var(--border-radius); 
   margin-bottom: 5px;
   transition: all var(--transition-fast);
 }
 
 #sidebar-wrapper .list-group-item:hover,
 #sidebar-wrapper .list-group-item.active {
-  background-color: var(--accent-color); /* Electric Blue for hover/active */
+  background-color: var(--accent-color); 
   color: var(--primary-color);
 }
 
 #sidebar-wrapper .list-group-item i {
   margin-right: 10px;
-  color: var(--btn-color); /* Neon Green for icons */
+  color: var(--btn-color); 
 }
 
 #sidebar-wrapper .list-group-item:hover i,
 #sidebar-wrapper .list-group-item.active i {
-  color: var(--primary-color); /* White icons on hover/active */
+  color: var(--primary-color); 
 }
 
 #sidebar-wrapper .list-group-item.mt-auto {
-  margin-top: 30px !important; /* Increased vertical spacing */
+  margin-top: 30px !important; 
 }
