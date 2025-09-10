@@ -105,13 +105,18 @@ textarea::placeholder {
 }
 
 .card .card-img-top {
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   border-radius: var(--card-radius) var(--card-radius) 0 0;
 }
 
 .card .card-title {
   color: var(--primary-color) !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
 }
 
 
@@ -136,6 +141,11 @@ textarea::placeholder {
   font-size: 0.9rem;
   color: var(--secondary-color);
   margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
 }
 
 .product-card .product-price {
@@ -292,5 +302,50 @@ textarea::placeholder {
 
 .nav-link.active {
   color: var(--accent-color) !important;
+}
+
+.card-badge {
+  top: 10px;
+  left: 10px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.7em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--background-color); /* Black text on colored badge */
+  z-index: 1;
+}
+
+/* Specific category badge colors */
+.badge-juegos-de-mesa {
+  background-color: var(--accent-color); /* Electric Blue */
+}
+
+.badge-accesorios {
+  background-color: var(--btn-color); /* Neon Green */
+}
+
+.badge-consolas {
+  background-color: #FF6347; /* Tomato */
+}
+
+.badge-computadores-gamers {
+  background-color: #8A2BE2; /* BlueViolet */
+}
+
+.badge-sillas-gamers {
+  background-color: #00CED1; /* DarkTurquoise */
+}
+
+.badge-mouse {
+  background-color: #FFD700; /* Gold */
+}
+
+.badge-mousepad {
+  background-color: #ADFF2F; /* GreenYellow */
+}
+
+.badge-poleras-personalizadas {
+  background-color: #FF69B4; /* HotPink */
 }
 

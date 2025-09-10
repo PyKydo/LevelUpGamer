@@ -1,19 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.includes('products.html')) {
+    const currentPath = window.location.pathname;
+
+    if (currentPath.includes('products.html') || currentPath === '/' || currentPath.includes('index.html')) {
         loadProducts();
     }
 
-    if (window.location.pathname.includes('product-detail.html')) {
+    if (currentPath.includes('product-detail.html')) {
         loadProductDetail();
     }
 });
 
 async function loadProducts() {
+    console.log("loadProducts called.");
     const productContainer = document.getElementById('product-list');
-    if (!productContainer) return;
+    if (!productContainer) {
+        console.log("product-list container not found.");
+        return;
+    }
 
     const products = await getAvailableProducts();
+    console.log("Products retrieved:", products);
     productContainer.innerHTML = ''; 
+
+    if (products.length === 0) {
+        productContainer.innerHTML = '<p>No hay productos disponibles.</p>';
+        console.log("No products available.");
+        return;
+    }
 
     products.forEach(product => {
         loadProductCard(productContainer, product);
